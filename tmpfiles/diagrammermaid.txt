@@ -1,0 +1,47 @@
+graph TD
+    A[Start Program] --> B[Display Welcome Screen & Available Commands]
+    B --> C{Enter Command}
+    C --> D[List Command]
+    C --> E[Monitor Command]
+    C --> F[Kill Command]
+    C --> G[Log Command]
+    C --> H[Help Command]
+    C --> I[Exit Command]
+
+    %% List Command Flow
+    D --> D1[Initialize Threads for Data Collection]
+    D1 --> D2[Collect PID, Name, CPU, Memory]
+    D2 --> D3[Display Process List]
+    D3 --> L[Log Action]
+
+    %% Monitor Command Flow
+    E --> E1[Initialize Thread Pool]
+    E1 --> E2[Monitor CPU and Memory in Real-Time]
+    E2 --> E3{Exit Monitoring?}
+    E3 --> |No| E2
+    E3 --> |Yes| L
+
+    %% Kill Command Flow
+    F --> F1[Input Validation]
+    F1 --> F2{Permission Check}
+    F2 --> |No| F3[Display Error]
+    F2 --> |Yes| F4[Terminate Process]
+    F4 --> F5{Termination Success?}
+    F5 --> |No| F3
+    F5 --> |Yes| L
+    F3 --> L
+
+    %% Log Command Flow
+    G --> G1[Display Recent Log Entries]
+    G1 --> L
+
+    %% Help Command Flow
+    H --> H1[Display Help Information]
+    H1 --> L
+
+    %% Exit Command Flow
+    I --> I1[Cleanup Resources]
+    I1 --> L
+    L --> C
+    I1 --> I2[Exit Program]
+
