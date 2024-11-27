@@ -121,12 +121,6 @@ process_manager/
   - Class `ThreadPool`.
   - Method declarations for adding tasks and managing worker threads.
 
-##### **`thread_pool.cpp`**
-- **Purpose**: Implement the thread pool management.
-- **Contents**:
-  - Methods to manage worker threads for parallel operations like process listing and resource monitoring.
-  - Efficiently handle thread reuse and minimize thread creation overhead.
-
 ### **Integration Plan**
 - **CMakeLists.txt**:
   - Create a `CMakeLists.txt` file to manage compilation.
@@ -142,6 +136,5 @@ process_manager/
 | **Resource Monitoring**| `resource_monitoring.h/.cpp`   | Monitor CPU/memory in real-time using thread pooling.    |
 | **Process Control**    | `process_control.h/.cpp`       | Terminate processes by PID and handle permission checks. |
 | **Logging**            | `logger.h/.cpp`                | Log user actions and system events for tracking/debugging.|
-| **Thread Pool**        | `thread_pool.h/.cpp`           | Manage threads for concurrent operations efficiently.    |
 
 
