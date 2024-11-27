@@ -14,6 +14,7 @@ public:
   Logger();
   void logAction(const std::string &action);
   void logError(const std::string &error);
+  void logWarning(const std::string &warning);
   void displayRecentLogs();
   void initializeLogger();
 

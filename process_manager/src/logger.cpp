@@ -35,6 +35,15 @@ void Logger::logError(const std::string &error) {
   }
 }
 
+void Logger::logWarning(const std::string &warning) {
+  if (logger_) {
+    logger_->warn(warning);
+    logger_->flush(); // Ensure logs are immediately written to the file
+  } else {
+    std::cerr << "Logger is not initialized.\n";
+  }
+}
+
 void Logger::displayRecentLogs() {
   const int N = 10;
   std::ifstream logFile("logs/process_manager.log");

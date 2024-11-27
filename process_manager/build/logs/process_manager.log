@@ -7,3 +7,28 @@
 [2024-11-26 22:21:51] [info] Application started
 [2024-11-26 22:21:58] [info] Listing processes
 [2024-11-26 22:22:08] [info] Listing processes
+[2024-11-27 10:00:18] [info] Application started
+[2024-11-27 10:00:22] [info] Listing processes
+[2024-11-27 10:04:11] [info] Application started
+[2024-11-27 10:04:13] [info] Listing processes
+[2024-11-27 10:05:41] [info] Application started
+[2024-11-27 10:05:42] [info] Listing processes
+[2024-11-27 10:08:03] [info] Application started
+[2024-11-27 10:08:05] [info] Listing processes
+[2024-11-27 10:11:42] [info] Application started
+[2024-11-27 10:11:43] [info] Listing processes
+[2024-11-27 10:25:22] [info] Application started
+[2024-11-27 10:25:23] [info] Listing processes
+[2024-11-27 10:25:47] [info] Application started
+[2024-11-27 10:25:51] [info] Listing processes
+[2024-11-27 10:35:40] [info] Application started
+[2024-11-27 10:36:06] [info] Application started
+[2024-11-27 10:46:00] [info] Application started
+[2024-11-27 10:46:02] [info] Listing processes
+[2024-11-27 10:46:12] [error] Invalid PID -2 for termination.
+[2024-11-27 10:46:31] [error] Attempted to terminate non-existing process PID 560000.
+[2024-11-27 10:47:25] [info] Listing processes
+[2024-11-27 10:47:35] [warning] PID 282860 did not terminate. Attempting SIGKILL.
+[2024-11-27 10:47:35] [info] Successfully terminated PID 282860.
+[2024-11-27 10:47:53] [info] Listing processes
+[2024-11-27 10:48:00] [info] Listing processes
