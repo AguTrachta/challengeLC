@@ -20,9 +20,15 @@ void ProcessManager::run() {
 
 void ProcessManager::displayWelcomeScreen() {
   std::cout << "========================================\n";
-  std::cout << "  High-Performance Process Manager\n";
+  std::cout
+      << "  \033[1;34m\033[4mHigh-Performance Process Manager\033[0m\n"; // Bold,
+                                                                         // underlined,
+                                                                         // and
+                                                                         // blue
   std::cout << "========================================\n";
-  std::cout << "Type 'help' to see available commands.\n";
+  std::cout
+      << "Type '\033[1mhelp\033[0m' to see available commands.\n"; // Bold
+                                                                   // "help"
 }
 
 void ProcessManager::startInteractiveLoop() {

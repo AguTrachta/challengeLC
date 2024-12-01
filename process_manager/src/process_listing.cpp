@@ -9,18 +9,11 @@
 #include <future>
 #include <iostream>
 #include <sstream>
-#include <thread>
+
 #include <unistd.h>
 #include <vector>
 
 namespace fs = std::filesystem;
-
-ProcessListing::ProcessListing() {
-  // Constructor if needed
-}
-
-#include <iomanip>
-#include <iostream>
 
 void ProcessListing::listProcesses() {
   Logger logger;
@@ -67,15 +60,21 @@ void ProcessListing::listProcesses() {
 
 void ProcessListing::fetchProcessList() {
   std::vector<int> pids = getAllPIDs();
+  size_t batchSize = 15; // Number of PIDs to process per thread
+  size_t numBatches =
+      (pids.size() + batchSize - 1) / batchSize; // Calculate batches
   std::vector<std::future<void>> futures;
 
-  // Use a thread pool to fetch process info concurrently
-  for (int pid : pids) {
-    futures.push_back(std::async(std::launch::async,
-                                 &ProcessListing::fetchProcessInfo, this, pid));
+  for (size_t i = 0; i < numBatches; ++i) {
+    futures.push_back(std::async(std::launch::async, [&, i]() {
+      size_t start = i * batchSize;
+      size_t end = std::min(start + batchSize, pids.size());
+      for (size_t j = start; j < end; ++j) {
+        fetchProcessInfo(pids[j]);
+      }
+    }));
   }
 
-  // Wait for all threads to finish
   for (auto &fut : futures) {
     fut.get();
   }

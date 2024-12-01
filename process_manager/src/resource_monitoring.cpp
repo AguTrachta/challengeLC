@@ -57,37 +57,9 @@ void ResourceMonitoring::stopMonitoring() {
   std::cout << "Stopping resource monitoring...\n";
 
   stopCondition_.notify_all(); // Notify all waiting threads to stop
+  pool_.waitForAll();
 }
 
-/*void ResourceMonitoring::monitorCPU() {
-  while (monitoring_) {
-    double cpuUsage = dataMonitor.getCPUUsage(); // Get the current CPU usage
-
-    // Create a string with enough space to overwrite the previous line
-    std::cout << "\rCurrent CPU Usage: " << std::fixed << std::setprecision(2)
-              << cpuUsage << "%\n"
-              << std::flush;
-    std::this_thread::sleep_for(
-        std::chrono::seconds(1)); // Simulate CPU monitoring interval
-  }
-}
-
-// Monitor Memory
-void ResourceMonitoring::monitorMemory() {
-  while (monitoring_) {
-    double memoryUsage =
-        dataMonitor.getMemoryUsage(); // Get the current memory usage
-
-    // Create a string with enough space to overwrite the previous line
-    std::cout << "\rCurrent Memory Usage: " << std::fixed
-              << std::setprecision(2) << memoryUsage << "%\n"
-              << std::flush;
-
-    std::this_thread::sleep_for(
-        std::chrono::seconds(1)); // Simulate memory monitoring interval
-  }
-}
-*/
 // Wait for user input to stop monitoring
 void ResourceMonitoring::waitForStopInput() {
   std::string input;
@@ -97,32 +69,33 @@ void ResourceMonitoring::waitForStopInput() {
 }
 
 void ResourceMonitoring::monitorCPUAndMemory() {
-  // Save the cursor position where the output starts
   std::cout << "\033[s"; // Save the current cursor position
 
   while (monitoring_) {
-    // Get the current CPU and memory usage
+    {
+      // Add a scoped lock to ensure thread-safe access to monitoring_ flag
+      std::unique_lock<std::mutex> lock(monitoringMutex_);
+      if (!monitoring_) {
+        break;
+      }
+    }
+
     double cpuUsage = dataMonitor.getCPUUsage();
     double memoryUsage = dataMonitor.getMemoryUsage();
 
-    // Restore the saved cursor position
     std::cout << "\033[u"; // Restore the saved cursor position
 
-    // Display the monitoring data (overwrite previous data in place)
-    std::cout << "Resource Monitoring\n";
+    // Add colors and formatting
+    std::cout << "\033[1;32mResource Monitoring\033[0m\n"; // Green and bold
     std::cout << "--------------------\n";
-    std::cout << "CPU Usage:    " << std::fixed << std::setprecision(2)
-              << cpuUsage << "%\n";
-    std::cout << "Memory Usage: " << std::fixed << std::setprecision(2)
-              << memoryUsage << "%\n";
-
-    // Flush the output to ensure the data is displayed immediately
+    std::cout << "CPU Usage:    \033[1m" << std::fixed << std::setprecision(2)
+              << cpuUsage << "%\033[0m\n"; // Bold for CPU percentage
+    std::cout << "Memory Usage: \033[1m" << std::fixed << std::setprecision(2)
+              << memoryUsage << "%\033[0m\n"; // Bold for Memory percentage
     std::cout << std::flush;
 
     // Sleep for 1 second before updating the display
     std::this_thread::sleep_for(std::chrono::seconds(1));
   }
-
-  // Optionally, add a newline after monitoring ends for better appearance
   std::cout << "\n";
 }
