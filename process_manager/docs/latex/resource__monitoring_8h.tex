@@ -1,0 +1,34 @@
+\doxysection{include/resource\+\_\+monitoring.h File Reference}
+\hypertarget{resource__monitoring_8h}{}\label{resource__monitoring_8h}\index{include/resource\_monitoring.h@{include/resource\_monitoring.h}}
+
+
+Provides functionality for monitoring system resources like CPU and memory usage.  
+
+
+{\ttfamily \#include "{}data\+\_\+monitoring.\+h"{}}\newline
+{\ttfamily \#include "{}logger.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+pool.\+h"{}}\newline
+{\ttfamily \#include $<$atomic$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$mutex$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+Include dependency graph for resource\+\_\+monitoring.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{resource__monitoring_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classResourceMonitoring}{Resource\+Monitoring}}
+\begin{DoxyCompactList}\small\item\em A class for monitoring system resources such as CPU and memory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides functionality for monitoring system resources like CPU and memory usage. 
+
+This file defines the {\ttfamily \doxylink{classResourceMonitoring}{Resource\+Monitoring}} class, which provides parallelized monitoring of system resources. The class monitors CPU and memory usage in real-\/time and allows the user to start and stop the monitoring process. 

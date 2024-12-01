@@ -1,0 +1,55 @@
+\doxysection{Process\+Listing Class Reference}
+\hypertarget{classProcessListing}{}\label{classProcessListing}\index{ProcessListing@{ProcessListing}}
+
+
+A class for listing and retrieving process information.  
+
+
+
+
+{\ttfamily \#include $<$process\+\_\+listing.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classProcessListing_ad28d7658631a49716fac18535bbd1bbe}{Process\+Listing}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{classProcessListing}{Process\+Listing} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classProcessListing_a06cfa143d30833357cea4618a03032cd}{list\+Processes}} ()
+\begin{DoxyCompactList}\small\item\em Lists all processes with their resource usage. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class for listing and retrieving process information. 
+
+The {\ttfamily \doxylink{classProcessListing}{Process\+Listing}} class provides functionality to list all system processes along with their CPU and memory usage. The class retrieves process information asynchronously to improve performance and utilizes a mutex to ensure thread safety when modifying shared data. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classProcessListing_ad28d7658631a49716fac18535bbd1bbe}\label{classProcessListing_ad28d7658631a49716fac18535bbd1bbe} 
+\index{ProcessListing@{ProcessListing}!ProcessListing@{ProcessListing}}
+\index{ProcessListing@{ProcessListing}!ProcessListing@{ProcessListing}}
+\doxysubsubsection{\texorpdfstring{ProcessListing()}{ProcessListing()}}
+{\footnotesize\ttfamily Process\+Listing\+::\+Process\+Listing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{classProcessListing}{Process\+Listing} class. 
+
+Initializes the object and prepares it for listing processes. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classProcessListing_a06cfa143d30833357cea4618a03032cd}\label{classProcessListing_a06cfa143d30833357cea4618a03032cd} 
+\index{ProcessListing@{ProcessListing}!listProcesses@{listProcesses}}
+\index{listProcesses@{listProcesses}!ProcessListing@{ProcessListing}}
+\doxysubsubsection{\texorpdfstring{listProcesses()}{listProcesses()}}
+{\footnotesize\ttfamily void Process\+Listing\+::list\+Processes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Lists all processes with their resource usage. 
+
+This method retrieves a list of processes, calculates their CPU and memory usage, and displays the information in a formatted table. Processes with high CPU or memory usage are displayed in red or yellow for better visibility. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{process__listing_8h}{process\+\_\+listing.\+h}}\item 
+src/process\+\_\+listing.\+cpp\end{DoxyCompactItemize}

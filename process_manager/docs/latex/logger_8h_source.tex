@@ -1,0 +1,37 @@
+\doxysection{logger.\+h}
+\hypertarget{logger_8h_source}{}\label{logger_8h_source}\index{include/logger.h@{include/logger.h}}
+\mbox{\hyperlink{logger_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ LOGGER\_H}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ LOGGER\_H}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}spdlog/spdlog.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classLogger}{Logger}}\ \{}
+\DoxyCodeLine{00030\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ \ \ \mbox{\hyperlink{classLogger_abc41bfb031d896170c7675fa96a6b30c}{Logger}}();}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00047\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLogger_a87ce3beb73b01bfcf9aa06560dd51226}{logAction}}(\textcolor{keyword}{const}\ std::string\ \&action);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00057\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLogger_a67f936e41d7d39b6dbe7897257652742}{logError}}(\textcolor{keyword}{const}\ std::string\ \&error);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00066\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLogger_a9ed506195ef9f719845d5936751069f6}{logWarning}}(\textcolor{keyword}{const}\ std::string\ \&warning);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00075\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLogger_af959f5c7b7db9825e91c75d67a90956a}{displayRecentLogs}}();}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00084\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLogger_aa66afd5a78f7ca6b5815737958b687b7}{initializeLogger}}();}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00087\ \ \ std::shared\_ptr<spdlog::logger>}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ logger\_;\ }
+\DoxyCodeLine{00089\ \};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ LOGGER\_H}}
+\DoxyCodeLine{00092\ }
+
+\end{DoxyCode}

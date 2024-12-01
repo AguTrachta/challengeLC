@@ -1,0 +1,50 @@
+\doxysection{Command\+Parser Class Reference}
+\hypertarget{classCommandParser}{}\label{classCommandParser}\index{CommandParser@{CommandParser}}
+
+
+A class responsible for parsing commands from an input string.  
+
+
+
+
+{\ttfamily \#include $<$command\+\_\+parser.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structParsedCommand}{Parsed\+Command}} \mbox{\hyperlink{classCommandParser_a82464e610123a86aed72d772d8d77d6a}{parse}} (const std\+::string \&input)
+\begin{DoxyCompactList}\small\item\em Parses an input string into a {\ttfamily \doxylink{structParsedCommand}{Parsed\+Command}} structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class responsible for parsing commands from an input string. 
+
+The {\ttfamily \doxylink{classCommandParser}{Command\+Parser}} class provides a method to parse a command string into a {\ttfamily \doxylink{structParsedCommand}{Parsed\+Command}} structure, which consists of the command\textquotesingle{}s name and its arguments. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCommandParser_a82464e610123a86aed72d772d8d77d6a}\label{classCommandParser_a82464e610123a86aed72d772d8d77d6a} 
+\index{CommandParser@{CommandParser}!parse@{parse}}
+\index{parse@{parse}!CommandParser@{CommandParser}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structParsedCommand}{Parsed\+Command}} Command\+Parser\+::parse (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{input }\end{DoxyParamCaption})}
+
+
+
+Parses an input string into a {\ttfamily \doxylink{structParsedCommand}{Parsed\+Command}} structure. 
+
+This method takes a string, splits it into the command name and its arguments, and returns a {\ttfamily \doxylink{structParsedCommand}{Parsed\+Command}} structure representing the parsed command.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em input} & The input string to be parsed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A {\ttfamily \doxylink{structParsedCommand}{Parsed\+Command}} structure containing the command name and a vector of arguments. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{command__parser_8h}{command\+\_\+parser.\+h}}\item 
+src/command\+\_\+parser.\+cpp\end{DoxyCompactItemize}

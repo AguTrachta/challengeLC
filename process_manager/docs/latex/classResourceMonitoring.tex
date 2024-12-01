@@ -1,0 +1,79 @@
+\doxysection{Resource\+Monitoring Class Reference}
+\hypertarget{classResourceMonitoring}{}\label{classResourceMonitoring}\index{ResourceMonitoring@{ResourceMonitoring}}
+
+
+A class for monitoring system resources such as CPU and memory.  
+
+
+
+
+{\ttfamily \#include $<$resource\+\_\+monitoring.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classResourceMonitoring_a7de795501f310e0460a10047a24e554f}{Resource\+Monitoring}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{classResourceMonitoring}{Resource\+Monitoring} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classResourceMonitoring_afd2feaa4fdd86cac1a0f197b7a0f92ca}{\texorpdfstring{$\sim$}{\string~}\+Resource\+Monitoring}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{classResourceMonitoring}{Resource\+Monitoring} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classResourceMonitoring_a87477a8d0270b97da731d41d7862c2ee}{start\+Monitoring}} ()
+\begin{DoxyCompactList}\small\item\em Starts the monitoring process. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classResourceMonitoring_aaafc3fb0291f1843bcb79dea679a72de}{stop\+Monitoring}} ()
+\begin{DoxyCompactList}\small\item\em Stops the monitoring process. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class for monitoring system resources such as CPU and memory. 
+
+The {\ttfamily \doxylink{classResourceMonitoring}{Resource\+Monitoring}} class enables the monitoring of system resources like CPU and memory usage. The class supports real-\/time, parallelized monitoring, with the ability to start and stop the monitoring process via user input. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classResourceMonitoring_a7de795501f310e0460a10047a24e554f}\label{classResourceMonitoring_a7de795501f310e0460a10047a24e554f} 
+\index{ResourceMonitoring@{ResourceMonitoring}!ResourceMonitoring@{ResourceMonitoring}}
+\index{ResourceMonitoring@{ResourceMonitoring}!ResourceMonitoring@{ResourceMonitoring}}
+\doxysubsubsection{\texorpdfstring{ResourceMonitoring()}{ResourceMonitoring()}}
+{\footnotesize\ttfamily Resource\+Monitoring\+::\+Resource\+Monitoring (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{classResourceMonitoring}{Resource\+Monitoring} class. 
+
+Initializes the resource monitoring system. The thread pool is created, and the monitoring state is set to false initially. \Hypertarget{classResourceMonitoring_afd2feaa4fdd86cac1a0f197b7a0f92ca}\label{classResourceMonitoring_afd2feaa4fdd86cac1a0f197b7a0f92ca} 
+\index{ResourceMonitoring@{ResourceMonitoring}!````~ResourceMonitoring@{\texorpdfstring{$\sim$}{\string~}ResourceMonitoring}}
+\index{````~ResourceMonitoring@{\texorpdfstring{$\sim$}{\string~}ResourceMonitoring}!ResourceMonitoring@{ResourceMonitoring}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ResourceMonitoring()}{\string~ResourceMonitoring()}}
+{\footnotesize\ttfamily Resource\+Monitoring\+::\texorpdfstring{$\sim$}{\string~}\+Resource\+Monitoring (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for the \doxylink{classResourceMonitoring}{Resource\+Monitoring} class. 
+
+Stops the monitoring process if it is still running and ensures proper cleanup. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classResourceMonitoring_a87477a8d0270b97da731d41d7862c2ee}\label{classResourceMonitoring_a87477a8d0270b97da731d41d7862c2ee} 
+\index{ResourceMonitoring@{ResourceMonitoring}!startMonitoring@{startMonitoring}}
+\index{startMonitoring@{startMonitoring}!ResourceMonitoring@{ResourceMonitoring}}
+\doxysubsubsection{\texorpdfstring{startMonitoring()}{startMonitoring()}}
+{\footnotesize\ttfamily void Resource\+Monitoring\+::start\+Monitoring (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Starts the monitoring process. 
+
+Initiates parallelized monitoring of CPU and memory usage. The monitoring runs until the user inputs a command to stop the process. \Hypertarget{classResourceMonitoring_aaafc3fb0291f1843bcb79dea679a72de}\label{classResourceMonitoring_aaafc3fb0291f1843bcb79dea679a72de} 
+\index{ResourceMonitoring@{ResourceMonitoring}!stopMonitoring@{stopMonitoring}}
+\index{stopMonitoring@{stopMonitoring}!ResourceMonitoring@{ResourceMonitoring}}
+\doxysubsubsection{\texorpdfstring{stopMonitoring()}{stopMonitoring()}}
+{\footnotesize\ttfamily void Resource\+Monitoring\+::stop\+Monitoring (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Stops the monitoring process. 
+
+Halts the resource monitoring, stops all running tasks, and performs necessary cleanup. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{resource__monitoring_8h}{resource\+\_\+monitoring.\+h}}\item 
+src/resource\+\_\+monitoring.\+cpp\end{DoxyCompactItemize}

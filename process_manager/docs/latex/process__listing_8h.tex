@@ -1,0 +1,31 @@
+\doxysection{include/process\+\_\+listing.h File Reference}
+\hypertarget{process__listing_8h}{}\label{process__listing_8h}\index{include/process\_listing.h@{include/process\_listing.h}}
+
+
+Provides functionality for listing and retrieving system processes.  
+
+
+{\ttfamily \#include $<$mutex$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for process\+\_\+listing.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{process__listing_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structProcessInfo}{Process\+Info}}
+\begin{DoxyCompactList}\small\item\em Holds information about a process. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classProcessListing}{Process\+Listing}}
+\begin{DoxyCompactList}\small\item\em A class for listing and retrieving process information. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides functionality for listing and retrieving system processes. 
+
+This file defines the {\ttfamily \doxylink{classProcessListing}{Process\+Listing}} class, which allows for fetching and displaying a list of system processes along with their resource usage (CPU and memory). The processes are identified by their PID, and the resource usage statistics are calculated for each process. 

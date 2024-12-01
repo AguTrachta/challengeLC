@@ -1,0 +1,102 @@
+\doxysection{Thread\+Pool Class Reference}
+\hypertarget{classThreadPool}{}\label{classThreadPool}\index{ThreadPool@{ThreadPool}}
+
+
+A class for managing a pool of worker threads to execute tasks concurrently.  
+
+
+
+
+{\ttfamily \#include $<$thread\+\_\+pool.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classThreadPool_ac34faaa0c275a69d4ab00aabe06faf10}{Thread\+Pool}} (size\+\_\+t num\+Threads)
+\begin{DoxyCompactList}\small\item\em Constructor that initializes the thread pool with the specified number of threads. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classThreadPool_a44d3d2ab618970605e684efc216655eb}{\texorpdfstring{$\sim$}{\string~}\+Thread\+Pool}} ()
+\begin{DoxyCompactList}\small\item\em Destructor that ensures all threads are joined before destruction. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename F $>$ }\\void \mbox{\hyperlink{classThreadPool_a3aff84dd9e4f10279d55b7a7bc7009cb}{enqueue}} (F \&\&f)
+\begin{DoxyCompactList}\small\item\em Templated method to enqueue a task into the thread pool. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classThreadPool_acab1831895d9b9dbaa11a951e04b894c}{stop}} ()
+\begin{DoxyCompactList}\small\item\em Explicit method to stop the pool gracefully. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classThreadPool_a73d2d1bbe5807e987be5cff0002de160}{wait\+For\+All}} ()
+\begin{DoxyCompactList}\small\item\em Waits for all tasks to complete. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class for managing a pool of worker threads to execute tasks concurrently. 
+
+This class creates a fixed number of threads that wait for tasks to be added to a queue. Once a task is added, the threads will execute the task concurrently. The pool can be stopped gracefully and can wait until all tasks are completed before destruction. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classThreadPool_ac34faaa0c275a69d4ab00aabe06faf10}\label{classThreadPool_ac34faaa0c275a69d4ab00aabe06faf10} 
+\index{ThreadPool@{ThreadPool}!ThreadPool@{ThreadPool}}
+\index{ThreadPool@{ThreadPool}!ThreadPool@{ThreadPool}}
+\doxysubsubsection{\texorpdfstring{ThreadPool()}{ThreadPool()}}
+{\footnotesize\ttfamily Thread\+Pool\+::\+Thread\+Pool (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{num\+Threads }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor that initializes the thread pool with the specified number of threads. 
+
+Creates the given number of worker threads that will be used to execute the tasks in parallel. 
+\begin{DoxyParams}{Parameters}
+{\em num\+Threads} & The number of threads to be created in the pool. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classThreadPool_a44d3d2ab618970605e684efc216655eb}\label{classThreadPool_a44d3d2ab618970605e684efc216655eb} 
+\index{ThreadPool@{ThreadPool}!````~ThreadPool@{\texorpdfstring{$\sim$}{\string~}ThreadPool}}
+\index{````~ThreadPool@{\texorpdfstring{$\sim$}{\string~}ThreadPool}!ThreadPool@{ThreadPool}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ThreadPool()}{\string~ThreadPool()}}
+{\footnotesize\ttfamily Thread\+Pool\+::\texorpdfstring{$\sim$}{\string~}\+Thread\+Pool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor that ensures all threads are joined before destruction. 
+
+Stops the pool, waits for all tasks to finish, and joins all worker threads. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classThreadPool_a3aff84dd9e4f10279d55b7a7bc7009cb}\label{classThreadPool_a3aff84dd9e4f10279d55b7a7bc7009cb} 
+\index{ThreadPool@{ThreadPool}!enqueue@{enqueue}}
+\index{enqueue@{enqueue}!ThreadPool@{ThreadPool}}
+\doxysubsubsection{\texorpdfstring{enqueue()}{enqueue()}}
+{\footnotesize\ttfamily template$<$typename F $>$ \\
+void Thread\+Pool\+::enqueue (\begin{DoxyParamCaption}\item[{F \&\&}]{f }\end{DoxyParamCaption})}
+
+
+
+Templated method to enqueue a task into the thread pool. 
+
+Adds a task to the task queue. The task will be executed by one of the worker threads. 
+\begin{DoxyParams}{Parameters}
+{\em f} & The task to be enqueued. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classThreadPool_acab1831895d9b9dbaa11a951e04b894c}\label{classThreadPool_acab1831895d9b9dbaa11a951e04b894c} 
+\index{ThreadPool@{ThreadPool}!stop@{stop}}
+\index{stop@{stop}!ThreadPool@{ThreadPool}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void Thread\+Pool\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Explicit method to stop the pool gracefully. 
+
+Sets the stop flag and notifies all threads to finish their tasks and exit. \Hypertarget{classThreadPool_a73d2d1bbe5807e987be5cff0002de160}\label{classThreadPool_a73d2d1bbe5807e987be5cff0002de160} 
+\index{ThreadPool@{ThreadPool}!waitForAll@{waitForAll}}
+\index{waitForAll@{waitForAll}!ThreadPool@{ThreadPool}}
+\doxysubsubsection{\texorpdfstring{waitForAll()}{waitForAll()}}
+{\footnotesize\ttfamily void Thread\+Pool\+::wait\+For\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Waits for all tasks to complete. 
+
+Blocks the caller until all tasks in the queue have been completed. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{thread__pool_8h}{thread\+\_\+pool.\+h}}\item 
+src/thread\+\_\+pool.\+cpp\end{DoxyCompactItemize}

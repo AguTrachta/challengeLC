@@ -1,0 +1,41 @@
+\doxysection{include/thread\+\_\+pool.h File Reference}
+\hypertarget{thread__pool_8h}{}\label{thread__pool_8h}\index{include/thread\_pool.h@{include/thread\_pool.h}}
+
+
+Header file for the \doxylink{classThreadPool}{Thread\+Pool} class that manages a pool of worker threads.  
+
+
+{\ttfamily \#include $<$atomic$>$}\newline
+{\ttfamily \#include $<$condition\+\_\+variable$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$queue$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for thread\+\_\+pool.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__pool_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{thread__pool_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classThreadPool}{Thread\+Pool}}
+\begin{DoxyCompactList}\small\item\em A class for managing a pool of worker threads to execute tasks concurrently. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for the \doxylink{classThreadPool}{Thread\+Pool} class that manages a pool of worker threads. 
+
+The \doxylink{classThreadPool}{Thread\+Pool} class allows for the parallel execution of tasks using a fixed number of threads. It supports adding tasks to a queue, which are executed by the worker threads. The pool can be stopped gracefully and can wait for all tasks to finish. 

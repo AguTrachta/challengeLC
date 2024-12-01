@@ -15,6 +15,10 @@
 
 namespace fs = std::filesystem;
 
+ProcessListing::ProcessListing() {
+  // Constructor if needed
+}
+
 void ProcessListing::listProcesses() {
   Logger logger;
   logger.logAction("Listing processes");

@@ -1,0 +1,38 @@
+\doxysection{data\+\_\+monitoring.\+h}
+\hypertarget{data__monitoring_8h_source}{}\label{data__monitoring_8h_source}\index{include/data\_monitoring.h@{include/data\_monitoring.h}}
+\mbox{\hyperlink{data__monitoring_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ DATA\_MONITORING\_H}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ DATA\_MONITORING\_H}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDataMonitoring}{DataMonitoring}}\ \{}
+\DoxyCodeLine{00028\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00035\ \ \ \mbox{\hyperlink{classDataMonitoring_ae767247ddd1871507632b849e0e3acdd}{DataMonitoring}}();}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00043\ \ \ \mbox{\hyperlink{classDataMonitoring_ac9f7cae51ec1b18ad51819f90fde8d44}{\string~DataMonitoring}}();}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00051\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDataMonitoring_af83af2b687622b76a8096ef5292f79da}{startMonitoring}}();}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00059\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDataMonitoring_a7a6c235a0ae8db9cb6cb9d6dfab3488b}{stopMonitoring}}();}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00068\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDataMonitoring_a429166a6b00b55b9ce61aa854e284871}{updateCPUUsage}}();}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00078\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDataMonitoring_ab8298c26cbcf21edc7653cff5577147a}{updateMemoryUsage}}();}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00088\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classDataMonitoring_aa17bfc7148371406ec34fa4c8d5f2af7}{getMemoryUsage}}();}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00098\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classDataMonitoring_a183e6f6298715c666541a0d8e52948c0}{getCPUUsage}}();}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00101\ \ \ \textcolor{keywordtype}{bool}\ monitoring\_;\ }
+\DoxyCodeLine{00102\ \};}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DATA\_MONITORING\_H}}
+\DoxyCodeLine{00105\ }
+
+\end{DoxyCode}
