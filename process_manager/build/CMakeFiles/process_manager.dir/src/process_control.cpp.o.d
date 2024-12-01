@@ -1,8 +1,8 @@
 CMakeFiles/process_manager.dir/src/process_control.cpp.o: \
- /home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/process_control.cpp \
+ //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/process_control.cpp \
  /usr/include/stdc-predef.h \
- /home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/../include/process_control.h \
- /home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/../include/logger.h \
+ //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/../include/process_control.h \
+ //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/../include/logger.h \
  /home/agustin/.conan2/p/b/spdlo088f6ab2d190f/p/include/spdlog/spdlog.h \
  /home/agustin/.conan2/p/b/spdlo088f6ab2d190f/p/include/spdlog/common.h \
  /home/agustin/.conan2/p/b/spdlo088f6ab2d190f/p/include/spdlog/details/null_mutex.h \

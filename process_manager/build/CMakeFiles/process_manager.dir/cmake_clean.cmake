@@ -2,6 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/process_manager.dir/link.d"
   "CMakeFiles/process_manager.dir/src/command_parser.cpp.o"
   "CMakeFiles/process_manager.dir/src/command_parser.cpp.o.d"
+  "CMakeFiles/process_manager.dir/src/data_monitoring.cpp.o"
+  "CMakeFiles/process_manager.dir/src/data_monitoring.cpp.o.d"
   "CMakeFiles/process_manager.dir/src/logger.cpp.o"
   "CMakeFiles/process_manager.dir/src/logger.cpp.o.d"
   "CMakeFiles/process_manager.dir/src/main.cpp.o"
@@ -14,6 +16,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/process_manager.dir/src/process_manager.cpp.o.d"
   "CMakeFiles/process_manager.dir/src/resource_monitoring.cpp.o"
   "CMakeFiles/process_manager.dir/src/resource_monitoring.cpp.o.d"
+  "CMakeFiles/process_manager.dir/src/thread_pool.cpp.o"
+  "CMakeFiles/process_manager.dir/src/thread_pool.cpp.o.d"
   "process_manager"
   "process_manager.pdb"
 )

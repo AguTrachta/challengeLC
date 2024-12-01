@@ -57,10 +57,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/agustin/Documents/importante/PPS/challengeLC/process_manager
+CMAKE_SOURCE_DIR = //home/agustin/Documents/importante/PPS/challengeLC/process_manager
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/agustin/Documents/importante/PPS/challengeLC/process_manager/build
+CMAKE_BINARY_DIR = //home/agustin/Documents/importante/PPS/challengeLC/process_manager/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/agustin/Documents/importante/PPS/challengeLC/process_manager/build/CMakeFiles /home/agustin/Documents/importante/PPS/challengeLC/process_manager/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start //home/agustin/Documents/importante/PPS/challengeLC/process_manager/build/CMakeFiles //home/agustin/Documents/importante/PPS/challengeLC/process_manager/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/agustin/Documents/importante/PPS/challengeLC/process_manager/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start //home/agustin/Documents/importante/PPS/challengeLC/process_manager/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -152,6 +152,30 @@ src/command_parser.s: src/command_parser.cpp.s
 src/command_parser.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/process_manager.dir/build.make CMakeFiles/process_manager.dir/src/command_parser.cpp.s
 .PHONY : src/command_parser.cpp.s
+
+src/data_monitoring.o: src/data_monitoring.cpp.o
+.PHONY : src/data_monitoring.o
+
+# target to build an object file
+src/data_monitoring.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/process_manager.dir/build.make CMakeFiles/process_manager.dir/src/data_monitoring.cpp.o
+.PHONY : src/data_monitoring.cpp.o
+
+src/data_monitoring.i: src/data_monitoring.cpp.i
+.PHONY : src/data_monitoring.i
+
+# target to preprocess a source file
+src/data_monitoring.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/process_manager.dir/build.make CMakeFiles/process_manager.dir/src/data_monitoring.cpp.i
+.PHONY : src/data_monitoring.cpp.i
+
+src/data_monitoring.s: src/data_monitoring.cpp.s
+.PHONY : src/data_monitoring.s
+
+# target to generate assembly for a file
+src/data_monitoring.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/process_manager.dir/build.make CMakeFiles/process_manager.dir/src/data_monitoring.cpp.s
+.PHONY : src/data_monitoring.cpp.s
 
 src/logger.o: src/logger.cpp.o
 .PHONY : src/logger.o
@@ -297,6 +321,30 @@ src/resource_monitoring.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/process_manager.dir/build.make CMakeFiles/process_manager.dir/src/resource_monitoring.cpp.s
 .PHONY : src/resource_monitoring.cpp.s
 
+src/thread_pool.o: src/thread_pool.cpp.o
+.PHONY : src/thread_pool.o
+
+# target to build an object file
+src/thread_pool.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/process_manager.dir/build.make CMakeFiles/process_manager.dir/src/thread_pool.cpp.o
+.PHONY : src/thread_pool.cpp.o
+
+src/thread_pool.i: src/thread_pool.cpp.i
+.PHONY : src/thread_pool.i
+
+# target to preprocess a source file
+src/thread_pool.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/process_manager.dir/build.make CMakeFiles/process_manager.dir/src/thread_pool.cpp.i
+.PHONY : src/thread_pool.cpp.i
+
+src/thread_pool.s: src/thread_pool.cpp.s
+.PHONY : src/thread_pool.s
+
+# target to generate assembly for a file
+src/thread_pool.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/process_manager.dir/build.make CMakeFiles/process_manager.dir/src/thread_pool.cpp.s
+.PHONY : src/thread_pool.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -309,6 +357,9 @@ help:
 	@echo "... src/command_parser.o"
 	@echo "... src/command_parser.i"
 	@echo "... src/command_parser.s"
+	@echo "... src/data_monitoring.o"
+	@echo "... src/data_monitoring.i"
+	@echo "... src/data_monitoring.s"
 	@echo "... src/logger.o"
 	@echo "... src/logger.i"
 	@echo "... src/logger.s"
@@ -327,6 +378,9 @@ help:
 	@echo "... src/resource_monitoring.o"
 	@echo "... src/resource_monitoring.i"
 	@echo "... src/resource_monitoring.s"
+	@echo "... src/thread_pool.o"
+	@echo "... src/thread_pool.i"
+	@echo "... src/thread_pool.s"
 .PHONY : help
 
 

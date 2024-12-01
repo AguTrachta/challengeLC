@@ -1,7 +1,6 @@
-CMakeFiles/process_manager.dir/src/resource_monitoring.cpp.o: \
- //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/resource_monitoring.cpp \
+CMakeFiles/process_manager.dir/src/data_monitoring.cpp.o: \
+ //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/data_monitoring.cpp \
  /usr/include/stdc-predef.h \
- //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/../include/resource_monitoring.h \
  //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/../include/data_monitoring.h \
  /usr/include/c++/13/iostream /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
@@ -206,12 +205,6 @@ CMakeFiles/process_manager.dir/src/resource_monitoring.cpp.o: \
  /usr/include/c++/13/bits/this_thread_sleep.h \
  /usr/include/x86_64-linux-gnu/sys/time.h /usr/include/semaphore.h \
  /usr/include/x86_64-linux-gnu/bits/semaphore.h \
- //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/../include/logger.h \
- /home/agustin/.conan2/p/b/spdlo088f6ab2d190f/p/include/spdlog/spdlog.h \
- /home/agustin/.conan2/p/b/spdlo088f6ab2d190f/p/include/spdlog/common.h \
- /home/agustin/.conan2/p/b/spdlo088f6ab2d190f/p/include/spdlog/details/null_mutex.h \
- /usr/include/c++/13/utility /usr/include/c++/13/bits/stl_relops.h \
- /home/agustin/.conan2/p/b/spdlo088f6ab2d190f/p/include/spdlog/tweakme.h \
  /usr/include/c++/13/chrono /usr/include/c++/13/sstream \
  /usr/include/c++/13/bits/sstream.tcc /usr/include/c++/13/vector \
  /usr/include/c++/13/bits/stl_uninitialized.h \
@@ -240,71 +233,7 @@ CMakeFiles/process_manager.dir/src/resource_monitoring.cpp.o: \
  /usr/include/c++/13/optional \
  /usr/include/c++/13/bits/enable_special_members.h \
  /usr/include/c++/13/span /usr/include/c++/13/variant \
- /usr/include/c++/13/bits/ranges_algobase.h \
- /usr/include/c++/13/functional /usr/include/c++/13/bits/std_function.h \
- /usr/include/c++/13/unordered_map \
- /usr/include/c++/13/bits/unordered_map.h \
- /usr/include/c++/13/bits/hashtable.h \
- /usr/include/c++/13/bits/hashtable_policy.h \
- /usr/include/c++/13/bits/node_handle.h \
- /usr/include/c++/13/bits/erase_if.h /usr/include/c++/13/memory \
- /usr/include/c++/13/bits/stl_raw_storage_iter.h \
- /usr/include/c++/13/bits/shared_ptr_atomic.h \
- /usr/include/c++/13/backward/auto_ptr.h \
- /usr/include/c++/13/bits/ranges_uninitialized.h \
- /usr/include/c++/13/pstl/glue_memory_defs.h \
- /usr/include/c++/13/pstl/execution_defs.h \
- /home/agustin/.conan2/p/b/spdlo088f6ab2d190f/p/include/spdlog/fmt/fmt.h \
- /home/agustin/.conan2/p/b/fmt5daa35896c20a/p/include/fmt/core.h \
- /usr/include/c++/13/cstring /usr/include/string.h /usr/include/strings.h \
- /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
- /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
- /usr/include/c++/13/iterator /usr/include/c++/13/bits/stream_iterator.h \
- /home/agustin/.conan2/p/b/fmt5daa35896c20a/p/include/fmt/format.h \
- /usr/include/c++/13/cmath /usr/include/math.h \
- /usr/include/x86_64-linux-gnu/bits/math-vector.h \
- /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
- /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
- /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
- /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
- /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
- /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
- /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
- /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
- /usr/include/c++/13/bits/specfun.h /usr/include/c++/13/tr1/gamma.tcc \
- /usr/include/c++/13/tr1/special_function_util.h \
- /usr/include/c++/13/tr1/bessel_function.tcc \
- /usr/include/c++/13/tr1/beta_function.tcc \
- /usr/include/c++/13/tr1/ell_integral.tcc \
- /usr/include/c++/13/tr1/exp_integral.tcc \
- /usr/include/c++/13/tr1/hypergeometric.tcc \
- /usr/include/c++/13/tr1/legendre_function.tcc \
- /usr/include/c++/13/tr1/modified_bessel_func.tcc \
- /usr/include/c++/13/tr1/poly_hermite.tcc \
- /usr/include/c++/13/tr1/poly_laguerre.tcc \
- /usr/include/c++/13/tr1/riemann_zeta.tcc \
- /home/agustin/.conan2/p/b/fmt5daa35896c20a/p/include/fmt/core.h \
- /home/agustin/.conan2/p/b/spdlo088f6ab2d190f/p/include/spdlog/details/registry.h \
- /home/agustin/.conan2/p/b/spdlo088f6ab2d190f/p/include/spdlog/details/periodic_worker.h \
- /usr/include/c++/13/condition_variable \
- /home/agustin/.conan2/p/b/spdlo088f6ab2d190f/p/include/spdlog/details/synchronous_factory.h \
- /home/agustin/.conan2/p/b/spdlo088f6ab2d190f/p/include/spdlog/logger.h \
- /home/agustin/.conan2/p/b/spdlo088f6ab2d190f/p/include/spdlog/details/backtracer.h \
- /home/agustin/.conan2/p/b/spdlo088f6ab2d190f/p/include/spdlog/details/circular_q.h \
- /usr/include/c++/13/cassert /usr/include/assert.h \
- /home/agustin/.conan2/p/b/spdlo088f6ab2d190f/p/include/spdlog/details/log_msg_buffer.h \
- /home/agustin/.conan2/p/b/spdlo088f6ab2d190f/p/include/spdlog/details/log_msg.h \
- /home/agustin/.conan2/p/b/spdlo088f6ab2d190f/p/include/spdlog/version.h \
- /usr/include/c++/13/filesystem /usr/include/c++/13/bits/fs_fwd.h \
- /usr/include/c++/13/bits/fs_path.h /usr/include/c++/13/codecvt \
- /usr/include/c++/13/bits/fs_dir.h /usr/include/c++/13/bits/fs_ops.h \
- /usr/include/c++/13/fstream \
+ /usr/include/c++/13/bits/ranges_algobase.h /usr/include/c++/13/fstream \
  /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
- /usr/include/c++/13/bits/fstream.tcc \
- //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/../include/thread_pool.h \
- /usr/include/c++/13/queue /usr/include/c++/13/deque \
- /usr/include/c++/13/bits/stl_deque.h /usr/include/c++/13/bits/deque.tcc \
- /usr/include/c++/13/bits/stl_queue.h \
- //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/../include/data_monitoring.h \
- //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/../include/logger.h
+ /usr/include/c++/13/bits/fstream.tcc

@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL
 
-CXX_INCLUDES = -I/home/agustin/Documents/importante/PPS/challengeLC/process_manager/include -isystem /home/agustin/.conan2/p/b/spdlo088f6ab2d190f/p/include -isystem /home/agustin/.conan2/p/b/fmt5daa35896c20a/p/include
+CXX_INCLUDES = -I//home/agustin/Documents/importante/PPS/challengeLC/process_manager/include -isystem /home/agustin/.conan2/p/b/spdlo088f6ab2d190f/p/include -isystem /home/agustin/.conan2/p/b/fmt5daa35896c20a/p/include
 
 CXX_FLAGS = -O3 -DNDEBUG -std=gnu++20
 

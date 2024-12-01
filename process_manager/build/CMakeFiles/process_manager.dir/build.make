@@ -53,10 +53,10 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/agustin/Documents/importante/PPS/challengeLC/process_manager
+CMAKE_SOURCE_DIR = //home/agustin/Documents/importante/PPS/challengeLC/process_manager
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/agustin/Documents/importante/PPS/challengeLC/process_manager/build
+CMAKE_BINARY_DIR = //home/agustin/Documents/importante/PPS/challengeLC/process_manager/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/process_manager.dir/depend.make
@@ -73,129 +73,161 @@ CMakeFiles/process_manager.dir/codegen:
 .PHONY : CMakeFiles/process_manager.dir/codegen
 
 CMakeFiles/process_manager.dir/src/command_parser.cpp.o: CMakeFiles/process_manager.dir/flags.make
-CMakeFiles/process_manager.dir/src/command_parser.cpp.o: /home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/command_parser.cpp
+CMakeFiles/process_manager.dir/src/command_parser.cpp.o: //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/command_parser.cpp
 CMakeFiles/process_manager.dir/src/command_parser.cpp.o: CMakeFiles/process_manager.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/agustin/Documents/importante/PPS/challengeLC/process_manager/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/process_manager.dir/src/command_parser.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/process_manager.dir/src/command_parser.cpp.o -MF CMakeFiles/process_manager.dir/src/command_parser.cpp.o.d -o CMakeFiles/process_manager.dir/src/command_parser.cpp.o -c /home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/command_parser.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=//home/agustin/Documents/importante/PPS/challengeLC/process_manager/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/process_manager.dir/src/command_parser.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/process_manager.dir/src/command_parser.cpp.o -MF CMakeFiles/process_manager.dir/src/command_parser.cpp.o.d -o CMakeFiles/process_manager.dir/src/command_parser.cpp.o -c //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/command_parser.cpp
 
 CMakeFiles/process_manager.dir/src/command_parser.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/process_manager.dir/src/command_parser.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/command_parser.cpp > CMakeFiles/process_manager.dir/src/command_parser.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/command_parser.cpp > CMakeFiles/process_manager.dir/src/command_parser.cpp.i
 
 CMakeFiles/process_manager.dir/src/command_parser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/process_manager.dir/src/command_parser.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/command_parser.cpp -o CMakeFiles/process_manager.dir/src/command_parser.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/command_parser.cpp -o CMakeFiles/process_manager.dir/src/command_parser.cpp.s
+
+CMakeFiles/process_manager.dir/src/data_monitoring.cpp.o: CMakeFiles/process_manager.dir/flags.make
+CMakeFiles/process_manager.dir/src/data_monitoring.cpp.o: //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/data_monitoring.cpp
+CMakeFiles/process_manager.dir/src/data_monitoring.cpp.o: CMakeFiles/process_manager.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=//home/agustin/Documents/importante/PPS/challengeLC/process_manager/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/process_manager.dir/src/data_monitoring.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/process_manager.dir/src/data_monitoring.cpp.o -MF CMakeFiles/process_manager.dir/src/data_monitoring.cpp.o.d -o CMakeFiles/process_manager.dir/src/data_monitoring.cpp.o -c //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/data_monitoring.cpp
+
+CMakeFiles/process_manager.dir/src/data_monitoring.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/process_manager.dir/src/data_monitoring.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/data_monitoring.cpp > CMakeFiles/process_manager.dir/src/data_monitoring.cpp.i
+
+CMakeFiles/process_manager.dir/src/data_monitoring.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/process_manager.dir/src/data_monitoring.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/data_monitoring.cpp -o CMakeFiles/process_manager.dir/src/data_monitoring.cpp.s
 
 CMakeFiles/process_manager.dir/src/logger.cpp.o: CMakeFiles/process_manager.dir/flags.make
-CMakeFiles/process_manager.dir/src/logger.cpp.o: /home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/logger.cpp
+CMakeFiles/process_manager.dir/src/logger.cpp.o: //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/logger.cpp
 CMakeFiles/process_manager.dir/src/logger.cpp.o: CMakeFiles/process_manager.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/agustin/Documents/importante/PPS/challengeLC/process_manager/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/process_manager.dir/src/logger.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/process_manager.dir/src/logger.cpp.o -MF CMakeFiles/process_manager.dir/src/logger.cpp.o.d -o CMakeFiles/process_manager.dir/src/logger.cpp.o -c /home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/logger.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=//home/agustin/Documents/importante/PPS/challengeLC/process_manager/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/process_manager.dir/src/logger.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/process_manager.dir/src/logger.cpp.o -MF CMakeFiles/process_manager.dir/src/logger.cpp.o.d -o CMakeFiles/process_manager.dir/src/logger.cpp.o -c //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/logger.cpp
 
 CMakeFiles/process_manager.dir/src/logger.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/process_manager.dir/src/logger.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/logger.cpp > CMakeFiles/process_manager.dir/src/logger.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/logger.cpp > CMakeFiles/process_manager.dir/src/logger.cpp.i
 
 CMakeFiles/process_manager.dir/src/logger.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/process_manager.dir/src/logger.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/logger.cpp -o CMakeFiles/process_manager.dir/src/logger.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/logger.cpp -o CMakeFiles/process_manager.dir/src/logger.cpp.s
 
 CMakeFiles/process_manager.dir/src/main.cpp.o: CMakeFiles/process_manager.dir/flags.make
-CMakeFiles/process_manager.dir/src/main.cpp.o: /home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/main.cpp
+CMakeFiles/process_manager.dir/src/main.cpp.o: //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/main.cpp
 CMakeFiles/process_manager.dir/src/main.cpp.o: CMakeFiles/process_manager.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/agustin/Documents/importante/PPS/challengeLC/process_manager/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/process_manager.dir/src/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/process_manager.dir/src/main.cpp.o -MF CMakeFiles/process_manager.dir/src/main.cpp.o.d -o CMakeFiles/process_manager.dir/src/main.cpp.o -c /home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=//home/agustin/Documents/importante/PPS/challengeLC/process_manager/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/process_manager.dir/src/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/process_manager.dir/src/main.cpp.o -MF CMakeFiles/process_manager.dir/src/main.cpp.o.d -o CMakeFiles/process_manager.dir/src/main.cpp.o -c //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/main.cpp
 
 CMakeFiles/process_manager.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/process_manager.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/main.cpp > CMakeFiles/process_manager.dir/src/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/main.cpp > CMakeFiles/process_manager.dir/src/main.cpp.i
 
 CMakeFiles/process_manager.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/process_manager.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/main.cpp -o CMakeFiles/process_manager.dir/src/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/main.cpp -o CMakeFiles/process_manager.dir/src/main.cpp.s
 
 CMakeFiles/process_manager.dir/src/process_control.cpp.o: CMakeFiles/process_manager.dir/flags.make
-CMakeFiles/process_manager.dir/src/process_control.cpp.o: /home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/process_control.cpp
+CMakeFiles/process_manager.dir/src/process_control.cpp.o: //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/process_control.cpp
 CMakeFiles/process_manager.dir/src/process_control.cpp.o: CMakeFiles/process_manager.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/agustin/Documents/importante/PPS/challengeLC/process_manager/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/process_manager.dir/src/process_control.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/process_manager.dir/src/process_control.cpp.o -MF CMakeFiles/process_manager.dir/src/process_control.cpp.o.d -o CMakeFiles/process_manager.dir/src/process_control.cpp.o -c /home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/process_control.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=//home/agustin/Documents/importante/PPS/challengeLC/process_manager/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/process_manager.dir/src/process_control.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/process_manager.dir/src/process_control.cpp.o -MF CMakeFiles/process_manager.dir/src/process_control.cpp.o.d -o CMakeFiles/process_manager.dir/src/process_control.cpp.o -c //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/process_control.cpp
 
 CMakeFiles/process_manager.dir/src/process_control.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/process_manager.dir/src/process_control.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/process_control.cpp > CMakeFiles/process_manager.dir/src/process_control.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/process_control.cpp > CMakeFiles/process_manager.dir/src/process_control.cpp.i
 
 CMakeFiles/process_manager.dir/src/process_control.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/process_manager.dir/src/process_control.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/process_control.cpp -o CMakeFiles/process_manager.dir/src/process_control.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/process_control.cpp -o CMakeFiles/process_manager.dir/src/process_control.cpp.s
 
 CMakeFiles/process_manager.dir/src/process_listing.cpp.o: CMakeFiles/process_manager.dir/flags.make
-CMakeFiles/process_manager.dir/src/process_listing.cpp.o: /home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/process_listing.cpp
+CMakeFiles/process_manager.dir/src/process_listing.cpp.o: //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/process_listing.cpp
 CMakeFiles/process_manager.dir/src/process_listing.cpp.o: CMakeFiles/process_manager.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/agustin/Documents/importante/PPS/challengeLC/process_manager/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/process_manager.dir/src/process_listing.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/process_manager.dir/src/process_listing.cpp.o -MF CMakeFiles/process_manager.dir/src/process_listing.cpp.o.d -o CMakeFiles/process_manager.dir/src/process_listing.cpp.o -c /home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/process_listing.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=//home/agustin/Documents/importante/PPS/challengeLC/process_manager/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/process_manager.dir/src/process_listing.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/process_manager.dir/src/process_listing.cpp.o -MF CMakeFiles/process_manager.dir/src/process_listing.cpp.o.d -o CMakeFiles/process_manager.dir/src/process_listing.cpp.o -c //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/process_listing.cpp
 
 CMakeFiles/process_manager.dir/src/process_listing.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/process_manager.dir/src/process_listing.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/process_listing.cpp > CMakeFiles/process_manager.dir/src/process_listing.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/process_listing.cpp > CMakeFiles/process_manager.dir/src/process_listing.cpp.i
 
 CMakeFiles/process_manager.dir/src/process_listing.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/process_manager.dir/src/process_listing.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/process_listing.cpp -o CMakeFiles/process_manager.dir/src/process_listing.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/process_listing.cpp -o CMakeFiles/process_manager.dir/src/process_listing.cpp.s
 
 CMakeFiles/process_manager.dir/src/process_manager.cpp.o: CMakeFiles/process_manager.dir/flags.make
-CMakeFiles/process_manager.dir/src/process_manager.cpp.o: /home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/process_manager.cpp
+CMakeFiles/process_manager.dir/src/process_manager.cpp.o: //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/process_manager.cpp
 CMakeFiles/process_manager.dir/src/process_manager.cpp.o: CMakeFiles/process_manager.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/agustin/Documents/importante/PPS/challengeLC/process_manager/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/process_manager.dir/src/process_manager.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/process_manager.dir/src/process_manager.cpp.o -MF CMakeFiles/process_manager.dir/src/process_manager.cpp.o.d -o CMakeFiles/process_manager.dir/src/process_manager.cpp.o -c /home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/process_manager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=//home/agustin/Documents/importante/PPS/challengeLC/process_manager/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/process_manager.dir/src/process_manager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/process_manager.dir/src/process_manager.cpp.o -MF CMakeFiles/process_manager.dir/src/process_manager.cpp.o.d -o CMakeFiles/process_manager.dir/src/process_manager.cpp.o -c //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/process_manager.cpp
 
 CMakeFiles/process_manager.dir/src/process_manager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/process_manager.dir/src/process_manager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/process_manager.cpp > CMakeFiles/process_manager.dir/src/process_manager.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/process_manager.cpp > CMakeFiles/process_manager.dir/src/process_manager.cpp.i
 
 CMakeFiles/process_manager.dir/src/process_manager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/process_manager.dir/src/process_manager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/process_manager.cpp -o CMakeFiles/process_manager.dir/src/process_manager.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/process_manager.cpp -o CMakeFiles/process_manager.dir/src/process_manager.cpp.s
 
 CMakeFiles/process_manager.dir/src/resource_monitoring.cpp.o: CMakeFiles/process_manager.dir/flags.make
-CMakeFiles/process_manager.dir/src/resource_monitoring.cpp.o: /home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/resource_monitoring.cpp
+CMakeFiles/process_manager.dir/src/resource_monitoring.cpp.o: //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/resource_monitoring.cpp
 CMakeFiles/process_manager.dir/src/resource_monitoring.cpp.o: CMakeFiles/process_manager.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/agustin/Documents/importante/PPS/challengeLC/process_manager/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/process_manager.dir/src/resource_monitoring.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/process_manager.dir/src/resource_monitoring.cpp.o -MF CMakeFiles/process_manager.dir/src/resource_monitoring.cpp.o.d -o CMakeFiles/process_manager.dir/src/resource_monitoring.cpp.o -c /home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/resource_monitoring.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=//home/agustin/Documents/importante/PPS/challengeLC/process_manager/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/process_manager.dir/src/resource_monitoring.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/process_manager.dir/src/resource_monitoring.cpp.o -MF CMakeFiles/process_manager.dir/src/resource_monitoring.cpp.o.d -o CMakeFiles/process_manager.dir/src/resource_monitoring.cpp.o -c //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/resource_monitoring.cpp
 
 CMakeFiles/process_manager.dir/src/resource_monitoring.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/process_manager.dir/src/resource_monitoring.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/resource_monitoring.cpp > CMakeFiles/process_manager.dir/src/resource_monitoring.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/resource_monitoring.cpp > CMakeFiles/process_manager.dir/src/resource_monitoring.cpp.i
 
 CMakeFiles/process_manager.dir/src/resource_monitoring.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/process_manager.dir/src/resource_monitoring.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/resource_monitoring.cpp -o CMakeFiles/process_manager.dir/src/resource_monitoring.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/resource_monitoring.cpp -o CMakeFiles/process_manager.dir/src/resource_monitoring.cpp.s
+
+CMakeFiles/process_manager.dir/src/thread_pool.cpp.o: CMakeFiles/process_manager.dir/flags.make
+CMakeFiles/process_manager.dir/src/thread_pool.cpp.o: //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/thread_pool.cpp
+CMakeFiles/process_manager.dir/src/thread_pool.cpp.o: CMakeFiles/process_manager.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=//home/agustin/Documents/importante/PPS/challengeLC/process_manager/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/process_manager.dir/src/thread_pool.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/process_manager.dir/src/thread_pool.cpp.o -MF CMakeFiles/process_manager.dir/src/thread_pool.cpp.o.d -o CMakeFiles/process_manager.dir/src/thread_pool.cpp.o -c //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/thread_pool.cpp
+
+CMakeFiles/process_manager.dir/src/thread_pool.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/process_manager.dir/src/thread_pool.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/thread_pool.cpp > CMakeFiles/process_manager.dir/src/thread_pool.cpp.i
+
+CMakeFiles/process_manager.dir/src/thread_pool.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/process_manager.dir/src/thread_pool.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/thread_pool.cpp -o CMakeFiles/process_manager.dir/src/thread_pool.cpp.s
 
 # Object files for target process_manager
 process_manager_OBJECTS = \
 "CMakeFiles/process_manager.dir/src/command_parser.cpp.o" \
+"CMakeFiles/process_manager.dir/src/data_monitoring.cpp.o" \
 "CMakeFiles/process_manager.dir/src/logger.cpp.o" \
 "CMakeFiles/process_manager.dir/src/main.cpp.o" \
 "CMakeFiles/process_manager.dir/src/process_control.cpp.o" \
 "CMakeFiles/process_manager.dir/src/process_listing.cpp.o" \
 "CMakeFiles/process_manager.dir/src/process_manager.cpp.o" \
-"CMakeFiles/process_manager.dir/src/resource_monitoring.cpp.o"
+"CMakeFiles/process_manager.dir/src/resource_monitoring.cpp.o" \
+"CMakeFiles/process_manager.dir/src/thread_pool.cpp.o"
 
 # External object files for target process_manager
 process_manager_EXTERNAL_OBJECTS =
 
 process_manager: CMakeFiles/process_manager.dir/src/command_parser.cpp.o
+process_manager: CMakeFiles/process_manager.dir/src/data_monitoring.cpp.o
 process_manager: CMakeFiles/process_manager.dir/src/logger.cpp.o
 process_manager: CMakeFiles/process_manager.dir/src/main.cpp.o
 process_manager: CMakeFiles/process_manager.dir/src/process_control.cpp.o
 process_manager: CMakeFiles/process_manager.dir/src/process_listing.cpp.o
 process_manager: CMakeFiles/process_manager.dir/src/process_manager.cpp.o
 process_manager: CMakeFiles/process_manager.dir/src/resource_monitoring.cpp.o
+process_manager: CMakeFiles/process_manager.dir/src/thread_pool.cpp.o
 process_manager: CMakeFiles/process_manager.dir/build.make
 process_manager: CMakeFiles/process_manager.dir/compiler_depend.ts
-process_manager: /home/agustin/.conan2/p/b/spdlo088f6ab2d190f/p/lib/libspdlog.a
-process_manager: /home/agustin/.conan2/p/b/fmt5daa35896c20a/p/lib/libfmt.a
+process_manager: //home/agustin/.conan2/p/b/spdlo088f6ab2d190f/p/lib/libspdlog.a
+process_manager: //home/agustin/.conan2/p/b/fmt5daa35896c20a/p/lib/libfmt.a
 process_manager: CMakeFiles/process_manager.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/agustin/Documents/importante/PPS/challengeLC/process_manager/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable process_manager"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=//home/agustin/Documents/importante/PPS/challengeLC/process_manager/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable process_manager"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/process_manager.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -207,6 +239,6 @@ CMakeFiles/process_manager.dir/clean:
 .PHONY : CMakeFiles/process_manager.dir/clean
 
 CMakeFiles/process_manager.dir/depend:
-	cd /home/agustin/Documents/importante/PPS/challengeLC/process_manager/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/agustin/Documents/importante/PPS/challengeLC/process_manager /home/agustin/Documents/importante/PPS/challengeLC/process_manager /home/agustin/Documents/importante/PPS/challengeLC/process_manager/build /home/agustin/Documents/importante/PPS/challengeLC/process_manager/build /home/agustin/Documents/importante/PPS/challengeLC/process_manager/build/CMakeFiles/process_manager.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd //home/agustin/Documents/importante/PPS/challengeLC/process_manager/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" //home/agustin/Documents/importante/PPS/challengeLC/process_manager //home/agustin/Documents/importante/PPS/challengeLC/process_manager //home/agustin/Documents/importante/PPS/challengeLC/process_manager/build //home/agustin/Documents/importante/PPS/challengeLC/process_manager/build //home/agustin/Documents/importante/PPS/challengeLC/process_manager/build/CMakeFiles/process_manager.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/process_manager.dir/depend
 

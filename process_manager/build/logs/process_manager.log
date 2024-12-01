@@ -32,3 +32,111 @@
 [2024-11-27 10:47:35] [info] Successfully terminated PID 282860.
 [2024-11-27 10:47:53] [info] Listing processes
 [2024-11-27 10:48:00] [info] Listing processes
+[2024-11-29 19:34:07] [info] Application started
+[2024-11-29 19:34:10] [info] Started resource monitoring.
+[2024-11-29 19:34:32] [info] Application started
+[2024-11-29 19:34:36] [info] Started resource monitoring.
+[2024-11-29 19:34:36] [info] Logged memory usage stats.
+[2024-11-29 19:34:36] [info] Logged CPU usage stats: -nan%
+[2024-11-29 19:40:52] [info] Application started
+[2024-11-29 19:40:54] [info] Started resource monitoring.
+[2024-11-29 19:41:01] [info] Application started
+[2024-11-29 19:41:03] [info] Started resource monitoring.
+[2024-11-29 19:42:24] [info] Application started
+[2024-11-29 19:42:25] [info] Started resource monitoring.
+[2024-11-29 19:42:25] [info] Logged memory usage stats.
+[2024-11-29 19:48:46] [info] Application started
+[2024-11-29 19:48:49] [info] Started resource monitoring.
+[2024-11-29 19:48:54] [info] Application started
+[2024-11-29 19:48:55] [info] Started resource monitoring.
+[2024-11-29 19:48:55] [info] Logged memory usage stats.
+[2024-11-29 20:53:29] [info] Application started
+[2024-11-29 20:53:33] [info] Started resource monitoring.
+[2024-11-29 20:53:33] [info] Logged CPU usage stats: -nan%
+[2024-11-29 20:53:33] [info] Logged memory usage stats.
+[2024-11-29 21:01:44] [info] Application started
+[2024-11-29 21:01:46] [info] Started resource monitoring.
+[2024-11-29 21:01:51] [info] Application started
+[2024-11-29 21:01:53] [info] Started resource monitoring.
+[2024-11-29 21:01:53] [info] Logged memory usage stats.
+[2024-11-29 21:03:00] [info] Application started
+[2024-11-29 21:03:01] [info] Started resource monitoring.
+[2024-11-29 21:20:03] [info] Application started
+[2024-11-29 21:20:19] [info] Application started
+[2024-11-29 21:20:20] [info] Started resource monitoring.
+[2024-11-29 21:20:26] [info] Application started
+[2024-11-29 21:20:29] [info] Started resource monitoring.
+[2024-11-29 21:20:29] [info] Logged memory usage stats.
+[2024-11-30 17:32:35] [info] Application started
+[2024-11-30 17:34:19] [info] Application started
+[2024-11-30 17:34:34] [info] Application started
+[2024-11-30 17:35:33] [info] Application started
+[2024-11-30 17:39:32] [info] Application started
+[2024-11-30 17:43:05] [info] Application started
+[2024-11-30 17:45:04] [info] Application started
+[2024-11-30 17:46:48] [info] Application started
+[2024-11-30 17:49:24] [info] Application started
+[2024-11-30 17:51:46] [info] Application started
+[2024-11-30 17:52:56] [info] Application started
+[2024-11-30 17:54:10] [info] Application started
+[2024-11-30 17:54:52] [info] Application started
+[2024-11-30 17:59:27] [info] Application started
+[2024-11-30 18:18:00] [info] Application started
+[2024-11-30 18:23:58] [info] Application started
+[2024-11-30 18:26:37] [info] Application started
+[2024-11-30 18:33:12] [info] Application started
+[2024-11-30 18:39:33] [info] Application started
+[2024-11-30 18:45:56] [info] Application started
+[2024-11-30 18:46:05] [info] Application started
+[2024-11-30 18:52:25] [info] Application started
+[2024-11-30 18:57:20] [info] Application started
+[2024-11-30 19:13:01] [info] Application started
+[2024-11-30 19:13:12] [info] Application started
+[2024-11-30 19:18:02] [info] Application started
+[2024-11-30 19:23:19] [info] Application started
+[2024-11-30 19:24:17] [info] Application started
+[2024-11-30 19:31:04] [info] Application started
+[2024-11-30 19:33:14] [info] Application started
+[2024-11-30 19:36:40] [info] Application started
+[2024-11-30 19:37:58] [info] Application started
+[2024-11-30 19:41:08] [info] Application started
+[2024-11-30 19:42:09] [info] Application started
+[2024-11-30 19:43:50] [info] Application started
+[2024-11-30 19:45:20] [info] Application started
+[2024-11-30 19:46:22] [info] Application started
+[2024-11-30 19:48:54] [info] Application started
+[2024-11-30 19:50:38] [info] Application started
+[2024-11-30 19:51:42] [info] Application started
+[2024-11-30 19:53:11] [info] Application started
+[2024-11-30 19:53:47] [info] Application started
+[2024-11-30 19:55:41] [info] Application started
+[2024-11-30 20:01:42] [info] Application started
+[2024-11-30 22:10:43] [info] Application started
+[2024-11-30 22:11:25] [info] Application started
+[2024-11-30 22:16:23] [info] Application started
+[2024-11-30 22:16:50] [info] Application started
+[2024-11-30 22:21:53] [info] Application started
+[2024-11-30 22:25:49] [info] Application started
+[2024-11-30 22:31:36] [info] Application started
+[2024-11-30 22:32:01] [info] Application started
+[2024-11-30 22:33:02] [info] Application started
+[2024-11-30 22:36:33] [info] Application started
+[2024-11-30 22:36:43] [info] Application started
+[2024-11-30 22:36:45] [info] Starting resource monitoring.
+[2024-11-30 22:36:48] [info] Stopping resource monitoring.
+[2024-11-30 22:36:48] [warning] Attempted to stop monitoring, but it was not running.
+[2024-11-30 22:37:36] [info] Application started
+[2024-11-30 22:37:38] [info] Starting resource monitoring.
+[2024-11-30 22:37:40] [info] Stopping resource monitoring.
+[2024-11-30 22:37:40] [info] Stopping resource monitoring.
+[2024-11-30 22:37:49] [info] Listing processes
+[2024-11-30 22:38:02] [info] Application started
+[2024-11-30 22:38:09] [info] Starting resource monitoring.
+[2024-11-30 22:38:10] [info] Stopping resource monitoring.
+[2024-11-30 22:38:10] [info] Stopping resource monitoring.
+[2024-11-30 22:38:14] [info] Starting resource monitoring.
+[2024-11-30 22:38:16] [info] Stopping resource monitoring.
+[2024-11-30 22:38:16] [info] Stopping resource monitoring.
+[2024-11-30 22:38:30] [info] Starting resource monitoring.
+[2024-11-30 22:38:34] [info] Stopping resource monitoring.
+[2024-11-30 22:38:34] [info] Stopping resource monitoring.
