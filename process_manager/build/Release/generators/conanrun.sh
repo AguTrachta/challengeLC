@@ -1,1 +1,0 @@
-. "/home/agustin/Documents/importante/PPS/challengeLC/process_manager/build/Release/generators/conanrunenv-release-x86_64.sh"
