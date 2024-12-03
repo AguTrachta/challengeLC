@@ -12,33 +12,25 @@ on:
       - main
       - develop
 
-runs:
-  using: "composite"
-  steps:
-    - name: "Run clang-format"
-      shell: bash
-      run: |
-        # We only make check, not changes
-        # Use the find command with the correct paths
-        PROJECT_PATH=$(pwd)
+jobs:
+  style-check:
+    runs-on: ubuntu-latest
 
-        # Specify the correct paths for src and include
-        SOURCE_FILES=$(find $PROJECT_PATH/process_manager/src -type f \( -name "*.cpp" -or -name "*.hpp" -or -name "*.h" -or -name "*.c" \) | tr "\n" " ")
-        SOURCE_FILES+=$(find $PROJECT_PATH/process_manager/include -type f \( -name "*.cpp" -or -name "*.hpp" -or -name "*.h" -or -name "*.c" \) | tr "\n" " ")
+    steps:
+      # 1. Checkout repository
+      - name: Checkout Repository
+        uses: actions/checkout@v3
 
-        ERROR_FILE_FLAG=$PROJECT_PATH/clang-format_errors.txt
+      # 2. Install clang-format
+      - name: Install clang-format
+        run: sudo apt-get install clang-format
 
-        echo "Running: clang-format -n $SOURCE_FILES"
+      # 3. Run clang-format check
+      - name: Run clang-format
+        shell: bash
+        run: |
+          # We only make check, not changes
+          # Use the find command with the correct paths
+          PROJECT_PATH=$(pwd)
 
-        # Run clang-format check
-        clang-format -n $SOURCE_FILES 2> ${ERROR_FILE_FLAG}
-        
-        # Check for errors
-        if [ -s $ERROR_FILE_FLAG ]; then
-            echo "Error: Some files are not formatted correctly"
-            cat $ERROR_FILE_FLAG
-            exit 1
-        else
-            echo "All files are formatted correctly. Niiiceee"
-            exit 0
-        fi
+          #
