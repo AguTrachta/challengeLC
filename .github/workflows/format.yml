@@ -2,6 +2,16 @@
 name: "Style check"
 description: "Style check using clang-format"
 
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+
 runs:
   using: "composite"
   steps:
@@ -15,9 +25,6 @@ runs:
         # Specify the correct paths for src and include
         SOURCE_FILES=$(find $PROJECT_PATH/process_manager/src -type f \( -name "*.cpp" -or -name "*.hpp" -or -name "*.h" -or -name "*.c" \) | tr "\n" " ")
         SOURCE_FILES+=$(find $PROJECT_PATH/process_manager/include -type f \( -name "*.cpp" -or -name "*.hpp" -or -name "*.h" -or -name "*.c" \) | tr "\n" " ")
-        
-        # If you have a lib, uncomment the following line
-        # SOURCE_FILES+=$(find $PROJECT_PATH/lib -type f \( -name "*.cpp" -or -name "*.hpp" -or -name "*.h" -or -name "*.c" \) | tr "\n" " ")
 
         ERROR_FILE_FLAG=$PROJECT_PATH/clang-format_errors.txt
 
