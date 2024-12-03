@@ -1,0 +1,36 @@
+
+name: "Style check"
+description: "Style check using clang-format"
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  style-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout repository
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      # 2. Install clang-format
+      - name: Install clang-format
+        run: sudo apt-get install clang-format
+
+      # 3. Run clang-format check
+      - name: Run clang-format
+        shell: bash
+        run: |
+          # We only make check, not changes
+          # Use the find command with the correct paths
+          PROJECT_PATH=$(pwd)
+
+          #
