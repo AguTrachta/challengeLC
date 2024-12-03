@@ -1,44 +1,56 @@
 
-name: Code Formatting with Clang-Format
+name: Style Check
+description: Style check using clang-format
 
 on:
   pull_request:
-    branches: [ main, develop ]
+    branches:
+      - main
+      - develop
   push:
-    branches: [ main, develop ]
+    branches:
+      - main
+      - develop
 
 jobs:
-  clang-format:
+  style_check:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the code
-      - name: Checkout Repository
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Step 2: Install clang-format
-      - name: Install Clang-Format
-        run: sudo apt-get update && sudo apt-get install -y clang-format
-
-      # Step 3: Run clang-format to check and apply formatting
-      - name: Run Clang-Format
+      - name: Set up environment
         run: |
-          # Apply clang-format to the codebase
-          clang-format -i process_manager/**/*.cpp process_manager/**/*.h
+          sudo apt-get update
+          sudo apt-get install -y clang-format
 
-      # Step 4: Check if clang-format applied any changes
-      - name: Check for Formatting Changes
-        id: changes
+      - name: Run clang-format style check
+        shell: bash
         run: |
-          git diff --exit-code || echo "There are formatting changes"
-          echo "changes=$(git diff --exit-code)" >> $GITHUB_ENV
+          # We only make check, not changes
+          # Use the find command with the variable
+          PROJECT_PATH=$(pwd)
 
-      # Step 5: Commit and Push Changes if any formatting was done
-      - name: Commit and Push Changes (if any)
-        if: env.changes != '0'  # Check if there were changes
-        run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "github-actions@github.com"
-          git add .
-          git commit -m "Apply clang-format"
-          git push
+          # Find source files
+          SOURCE_FILES=$(find $PROJECT_PATH/src -type f \( -name "*.cpp" -or -name "*.hpp" -or -name "*.h" -or -name "*.c" \) | tr "\n" " ")
+          SOURCE_FILES+=$(find $PROJECT_PATH/include -type f \( -name "*.cpp" -or -name "*.hpp" -or -name "*.h" -or -name "*.c" \) | tr "\n" " ")
+          # If you have a lib, uncomment the following line
+          # SOURCE_FILES+=$(find $PROJECT_PATH/lib -type f \( -name "*.cpp" -or -name "*.hpp" -or -name "*.h" -or -name "*.c" \) | tr "\n" " ")
+
+          # Set error file flag
+          ERROR_FILE_FLAG=$PROJECT_PATH/clang-format_errors.txt
+
+          # Run clang-format with -n to only check, not modify
+          echo "Running: clang-format -n $SOURCE_FILES"
+          clang-format -n $SOURCE_FILES 2> ${ERROR_FILE_FLAG}
+
+          # Check if there are any errors
+          if [ -s $ERROR_FILE_FLAG ]; then
+              echo "Error: Some files are not formatted correctly"
+              cat $ERROR_FILE_FLAG
+              exit 1
+          else
+              echo "All files are formatted correctly. Niiiceee"
+              exit 0
+          fi
