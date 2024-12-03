@@ -26,12 +26,16 @@ jobs:
           # Apply clang-format to the codebase
           clang-format -i process_manager/**/*.cpp process_manager/**/*.h
 
-          # Check for changes after formatting
+      # Step 4: Check if clang-format applied any changes
+      - name: Check for Formatting Changes
+        id: changes
+        run: |
           git diff --exit-code || echo "There are formatting changes"
+          echo "changes=$(git diff --exit-code)" >> $GITHUB_ENV
 
-      # Step 4: Commit and push changes if any formatting was done
+      # Step 5: Commit and Push Changes if any formatting was done
       - name: Commit and Push Changes (if any)
-        if: success() && (git diff --exit-code || echo "Changes detected")
+        if: env.changes != '0'  # Check if there were changes
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"

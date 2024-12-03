@@ -10,82 +10,40 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    needs: build  # Ensure this job runs after the build job
 
     steps:
       # 1. Checkout Repository
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      # 2. Cache Conan Packages
-      - name: Cache Conan Packages
-        uses: actions/cache@v3
+      # 2. Download Build Artifact from the build job
+      - name: Download Build Artifact
+        uses: actions/download-artifact@v3
         with:
-          path: ~/.conan/data
-          key: ${{ runner.os }}-conan-${{ hashFiles('process_manager/conanfile.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-conan-
+          name: build-output
+          path: process_manager/build/
 
-      # 3. Install Conan
-      - name: Install Conan
-        run: |
-          python -m pip install --upgrade pip
-          pip install conan
-
-      # 4. Set up Environment and Install Dependencies with Conan
-      - name: Install Dependencies with Conan
-        run: |
-          # Set up virtual environment
-          python -m venv myenv
-          source myenv/bin/activate
-
-          # Create a default Conan profile if it doesn't exist
-          conan profile detect --force
-
-          # Install dependencies using Conan
-          cd process_manager
-          mkdir -p build
-          cd build
-          conan install .. --build=missing
-
-          # Deactivate virtual environment
-          deactivate
-
-      # 5. Cache CMake Build Directory
-      - name: Cache CMake Build Directory
-        uses: actions/cache@v3
-        with:
-          path: build/
-          key: ${{ runner.os }}-cmake-${{ hashFiles('process_manager/CMakeLists.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-cmake-
-
-      # 6. Build Project with Tests Enabled
-      - name: Build Project with Tests
-        run: |
-          cd process_manager/build
-          cmake .. -DCMAKE_BUILD_TYPE=Debug -DBUILD_TESTS=ON
-          cmake --build .  # No need for --config Debug, this works for single configuration builds
-
-      # 7. Run Tests
+      # 3. Run Tests
       - name: Run Tests
         run: |
           cd process_manager/build
           ctest --output-on-failure
 
-      # 8. Install gcovr for Coverage Reporting
+      # 4. Install gcovr for Coverage Reporting
       - name: Install gcovr
         run: |
           sudo apt-get update
           sudo apt-get install -y gcovr
 
-      # 9. Generate Code Coverage Report
+      # 5. Generate Code Coverage Report
       - name: Generate Code Coverage Report
         run: |
           cd process_manager/build
           gcovr -r ../process_manager --xml-pretty -o coverage.xml
           gcovr -r ../process_manager --html-details -o coverage.html
 
-      # 10. Upload Coverage Reports as Artifacts
+      # 6. Upload Coverage Reports as Artifacts
       - name: Upload Coverage Reports
         uses: actions/upload-artifact@v3
         with:
