@@ -1,0 +1,22 @@
+
+# Ignore build directories
+build/
+*.o
+*.a
+
+# Ignore Conan cache
+.conan/
+conan.lock
+
+# Ignore Dockerfile and .dockerignore itself
+Dockerfile
+.dockerignore
+
+# Ignore Git files
+.git/
+.gitignore
+
+# Ignore other unnecessary files
+*.log
+*.tmp
+*.md
