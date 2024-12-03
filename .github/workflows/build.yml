@@ -39,7 +39,7 @@ jobs:
           source myenv/bin/activate
 
           # Install dependencies using Conan
-          cd challengeLC/process_manager
+          cd process_manager
           mkdir -p build
           cd build
           conan install .. --build=missing
@@ -59,7 +59,7 @@ jobs:
       # 6. Build Project using CMake
       - name: Build Project
         run: |
-          cd challengeLC/process_manager/build
+          cd process_manager/build
           cmake .. -DCMAKE_BUILD_TYPE=Release
           cmake --build . --config Release
 
