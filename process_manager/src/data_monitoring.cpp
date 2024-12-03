@@ -1,3 +1,4 @@
+
 #include "../include/data_monitoring.h"
 #include <atomic>
 #include <chrono>
@@ -10,6 +11,15 @@
 // Global variable to store the current CPU usage
 std::atomic<double> global_cpu_usage(0.0);
 std::atomic<double> global_memory_usage(0.0);
+
+// Constants to replace magic numbers
+const int MEMORY_UPDATE_INTERVAL_SECONDS = 1;    // Interval for memory updates
+const int CPU_UPDATE_INTERVAL_SECONDS = 1;       // Interval for CPU updates
+const char *PROC_MEMINFO_PATH = "/proc/meminfo"; // Path for memory info file
+const char *PROC_STAT_PATH = "/proc/stat";       // Path for CPU stats file
+const char *MEM_TOTAL_KEY = "MemTotal"; // Key for total memory in /proc/meminfo
+const char *MEM_AVAILABLE_KEY =
+    "MemAvailable"; // Key for available memory in /proc/meminfo
 
 DataMonitoring::DataMonitoring() : monitoring_(false) {}
 
@@ -37,9 +47,9 @@ void DataMonitoring::updateMemoryUsage() {
   static unsigned long long prev_available_memory = 0;
 
   while (monitoring_) {
-    std::ifstream meminfo("/proc/meminfo");
+    std::ifstream meminfo(PROC_MEMINFO_PATH);
     if (!meminfo) {
-      std::cerr << "Error: Could not open /proc/meminfo.\n";
+      std::cerr << "Error: Could not open " << PROC_MEMINFO_PATH << ".\n";
       return;
     }
 
@@ -49,9 +59,9 @@ void DataMonitoring::updateMemoryUsage() {
 
     // Parse /proc/meminfo for the required values
     while (std::getline(meminfo, line)) {
-      if (line.find("MemTotal") != std::string::npos) {
+      if (line.find(MEM_TOTAL_KEY) != std::string::npos) {
         std::sscanf(line.c_str(), "MemTotal: %llu kB", &total_memory);
-      } else if (line.find("MemAvailable") != std::string::npos) {
+      } else if (line.find(MEM_AVAILABLE_KEY) != std::string::npos) {
         std::sscanf(line.c_str(), "MemAvailable: %llu kB", &available_memory);
       }
     }
@@ -73,14 +83,15 @@ void DataMonitoring::updateMemoryUsage() {
     prev_total_memory = total_memory;
     prev_available_memory = available_memory;
 
-    // Sleep for 1 second before the next update
-    std::this_thread::sleep_for(std::chrono::seconds(1));
+    // Sleep for the configured update interval
+    std::this_thread::sleep_for(
+        std::chrono::seconds(MEMORY_UPDATE_INTERVAL_SECONDS));
   }
 }
 
 void DataMonitoring::updateCPUUsage() {
   while (monitoring_) {
-    std::ifstream file("/proc/stat");
+    std::ifstream file(PROC_STAT_PATH);
     std::string line;
     std::getline(file, line); // Read the first line, which contains CPU stats
     file.close();
@@ -116,7 +127,9 @@ void DataMonitoring::updateCPUUsage() {
     prev_total = total;
     prev_idle = idle_time;
 
-    std::this_thread::sleep_for(std::chrono::seconds(1)); // Update every second
+    // Sleep for the configured update interval
+    std::this_thread::sleep_for(std::chrono::seconds(
+        CPU_UPDATE_INTERVAL_SECONDS)); // Update every second
   }
 }
 

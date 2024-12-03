@@ -59,4 +59,3 @@ void ThreadPool::waitForAll() {
         std::chrono::milliseconds(100)); // Sleep to avoid busy-waiting
   }
 }
-

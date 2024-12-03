@@ -1,3 +1,4 @@
+
 #include "../include/process_control.h"
 #include "../include/logger.h"
 
@@ -9,11 +10,16 @@
 #include <sys/types.h>
 #include <unistd.h>
 
+// Constants
+constexpr int INVALID_PID = -1; // Invalid process ID value
+constexpr int SLEEP_DURATION =
+    1; // Sleep time in seconds before checking process termination
+
 void ProcessControl::terminateProcess(int pid) {
   Logger logger;
 
   // Step 1: Validate PID
-  if (pid <= 0) {
+  if (pid <= INVALID_PID) {
     std::cerr << "Error: Invalid PID " << pid << ".\n";
     logger.logError("Invalid PID " + std::to_string(pid) + " for termination.");
     return;
@@ -48,7 +54,7 @@ void ProcessControl::terminateProcess(int pid) {
   }
 
   // Step 4: Verify termination
-  sleep(1); // Give the system a moment to terminate the process
+  sleep(SLEEP_DURATION); // Give the system a moment to terminate the process
   if (kill(pid, 0) == 0) {
     // Process still exists, attempt SIGKILL
     std::cerr << "Warning: Process with PID " << pid

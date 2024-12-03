@@ -1,19 +1,28 @@
+
 #include "../include/logger.h"
 #include <iostream>
 #include <spdlog/sinks/basic_file_sink.h> // Required for the file sink
+
+namespace {
+// Constants for meaningful values
+const std::string LOG_DIRECTORY = "logs"; // Directory for logs
+const std::string LOG_FILE_PATH = "logs/process_manager.log"; // Log file path
+const std::string LOG_PATTERN =
+    "[%Y-%m-%d %H:%M:%S] [%l] %v"; // Log format pattern
+const int DISPLAY_LOG_LINES = 10;  // Number of recent logs to display
+} // namespace
 
 Logger::Logger() { initializeLogger(); }
 
 void Logger::initializeLogger() {
   // Ensure the logs directory exists
-  std::filesystem::create_directories("logs");
+  std::filesystem::create_directories(LOG_DIRECTORY);
 
   // Create or retrieve the logger
   logger_ = spdlog::get("basic_logger");
   if (!logger_) {
-    logger_ =
-        spdlog::basic_logger_mt("basic_logger", "logs/process_manager.log");
-    spdlog::set_pattern("[%Y-%m-%d %H:%M:%S] [%l] %v");
+    logger_ = spdlog::basic_logger_mt("basic_logger", LOG_FILE_PATH);
+    spdlog::set_pattern(LOG_PATTERN);
   }
 }
 
@@ -45,8 +54,7 @@ void Logger::logWarning(const std::string &warning) {
 }
 
 void Logger::displayRecentLogs() {
-  const int N = 10;
-  std::ifstream logFile("logs/process_manager.log");
+  std::ifstream logFile(LOG_FILE_PATH);
   if (logFile.is_open()) {
     std::vector<std::string> lines;
     std::string line;
@@ -55,8 +63,8 @@ void Logger::displayRecentLogs() {
     }
     logFile.close();
 
-    // Display the last N lines
-    int start = std::max(0, static_cast<int>(lines.size()) - N);
+    // Display the last DISPLAY_LOG_LINES lines
+    int start = std::max(0, static_cast<int>(lines.size()) - DISPLAY_LOG_LINES);
     for (size_t i = start; i < lines.size(); ++i) {
       std::cout << lines[i] << '\n';
     }
@@ -64,4 +72,3 @@ void Logger::displayRecentLogs() {
     std::cerr << "Unable to open log file.\n";
   }
 }
-

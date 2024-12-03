@@ -9,8 +9,28 @@
 #include <mutex>
 #include <thread>
 
+// Constants
+constexpr int THREAD_POOL_SIZE = 4; // Size of the thread pool
+constexpr int MONITOR_UPDATE_INTERVAL_SECONDS =
+    1; // Interval for updating CPU and Memory usage
+constexpr const char *USER_STOP_PROMPT =
+    "Press Enter to stop the monitor.\n"; // User prompt
+constexpr const char *RESOURCE_MONITORING_HEADER =
+    "\033[1;32mResource Monitoring\033[0m\n"; // Header with color
+constexpr const char *RESOURCE_MONITORING_SEPARATOR =
+    "--------------------\n";                             // Separator line
+constexpr const char *CPU_USAGE_LABEL = "CPU Usage:    "; // Label for CPU usage
+constexpr const char *MEMORY_USAGE_LABEL =
+    "Memory Usage: ";                                  // Label for Memory usage
+constexpr const char *CURSOR_POSITION_SAVE = "\033[s"; // Save cursor position
+constexpr const char *CURSOR_POSITION_RESTORE =
+    "\033[u";                                   // Restore cursor position
+constexpr const char *BOLD_FORMAT = "\033[1m";  // Bold text formatting
+constexpr const char *RESET_FORMAT = "\033[0m"; // Reset text formatting
+
 // Constructor
-ResourceMonitoring::ResourceMonitoring() : pool_(4), monitoring_(false) {}
+ResourceMonitoring::ResourceMonitoring()
+    : pool_(THREAD_POOL_SIZE), monitoring_(false) {}
 
 // Destructor
 ResourceMonitoring::~ResourceMonitoring() {
@@ -31,7 +51,7 @@ void ResourceMonitoring::startMonitoring() {
   monitoring_ = true;
   logger_.logAction("Starting resource monitoring.");
 
-  std::cout << "Press Enter to stop the monitor.\n";
+  std::cout << USER_STOP_PROMPT;
 
   dataMonitor.startMonitoring();
 
@@ -68,7 +88,7 @@ void ResourceMonitoring::waitForStopInput() {
 }
 
 void ResourceMonitoring::monitorCPUAndMemory() {
-  std::cout << "\033[s"; // Save the current cursor position
+  std::cout << CURSOR_POSITION_SAVE; // Save the current cursor position
 
   while (monitoring_) {
     {
@@ -82,19 +102,22 @@ void ResourceMonitoring::monitorCPUAndMemory() {
     double cpuUsage = dataMonitor.getCPUUsage();
     double memoryUsage = dataMonitor.getMemoryUsage();
 
-    std::cout << "\033[u"; // Restore the saved cursor position
+    std::cout << CURSOR_POSITION_RESTORE; // Restore the saved cursor position
 
     // Add colors and formatting
-    std::cout << "\033[1;32mResource Monitoring\033[0m\n"; // Green and bold
-    std::cout << "--------------------\n";
-    std::cout << "CPU Usage:    \033[1m" << std::fixed << std::setprecision(2)
-              << cpuUsage << "%\033[0m\n"; // Bold for CPU percentage
-    std::cout << "Memory Usage: \033[1m" << std::fixed << std::setprecision(2)
-              << memoryUsage << "%\033[0m\n"; // Bold for Memory percentage
+    std::cout << RESOURCE_MONITORING_HEADER;    // Green and bold header
+    std::cout << RESOURCE_MONITORING_SEPARATOR; // Separator line
+    std::cout << CPU_USAGE_LABEL << BOLD_FORMAT << std::fixed
+              << std::setprecision(2) << cpuUsage << "%" << RESET_FORMAT
+              << "\n"; // Bold for CPU percentage
+    std::cout << MEMORY_USAGE_LABEL << BOLD_FORMAT << std::fixed
+              << std::setprecision(2) << memoryUsage << "%" << RESET_FORMAT
+              << "\n"; // Bold for Memory percentage
     std::cout << std::flush;
 
-    // Sleep for 1 second before updating the display
-    std::this_thread::sleep_for(std::chrono::seconds(1));
+    // Sleep for the defined interval before updating the display
+    std::this_thread::sleep_for(
+        std::chrono::seconds(MONITOR_UPDATE_INTERVAL_SECONDS));
   }
   std::cout << "\n";
 }

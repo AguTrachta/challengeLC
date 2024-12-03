@@ -9,15 +9,33 @@
 #include <future>
 #include <iostream>
 #include <sstream>
-
+#include <thread>
 #include <unistd.h>
 #include <vector>
 
 namespace fs = std::filesystem;
 
+namespace {
+// Constants for better readability
+const size_t BATCH_SIZE = 15;      // Number of PIDs to process per thread
+const size_t MAX_NAME_LENGTH = 30; // Max length for process name display
+const double HIGH_USAGE_THRESHOLD =
+    50.0; // Threshold for high usage (CPU/Memory)
+const double MODERATE_USAGE_THRESHOLD =
+    20.0; // Threshold for moderate usage (CPU/Memory)
+const size_t PROCESS_STAT_FIELDS_TO_SKIP =
+    13; // Number of fields to skip in /proc/<pid>/stat
+const std::string PROC_STAT_PATH = "/proc/stat"; // Path to CPU stats
+const std::string PROC_COMM_PATH_PREFIX =
+    "/proc/"; // Prefix for process comm files
+} // Anonymous namespace
+
 ProcessListing::ProcessListing() {
   // Constructor if needed
 }
+
+#include <iomanip>
+#include <iostream>
 
 void ProcessListing::listProcesses() {
   Logger logger;
@@ -36,9 +54,9 @@ void ProcessListing::listProcesses() {
     std::cout << std::left << std::setw(8) << process.pid;
 
     // Print CPU% with colors
-    if (process.cpuUsage > 50.0) {
+    if (process.cpuUsage > HIGH_USAGE_THRESHOLD) {
       std::cout << "\033[31m"; // Red for high usage
-    } else if (process.cpuUsage > 20.0) {
+    } else if (process.cpuUsage > MODERATE_USAGE_THRESHOLD) {
       std::cout << "\033[33m"; // Yellow for moderate usage
     } else {
       std::cout << "\033[32m"; // Green for low usage
@@ -47,9 +65,9 @@ void ProcessListing::listProcesses() {
               << process.cpuUsage << "\033[0m"; // Reset color
 
     // Print Memory% with colors
-    if (process.memoryUsage > 50.0) {
+    if (process.memoryUsage > HIGH_USAGE_THRESHOLD) {
       std::cout << "\033[31m"; // Red for high usage
-    } else if (process.memoryUsage > 20.0) {
+    } else if (process.memoryUsage > MODERATE_USAGE_THRESHOLD) {
       std::cout << "\033[33m"; // Yellow for moderate usage
     } else {
       std::cout << "\033[32m"; // Green for low usage
@@ -58,21 +76,21 @@ void ProcessListing::listProcesses() {
               << process.memoryUsage << "\033[0m"; // Reset color
 
     // Print Name (uncolored)
-    std::cout << process.name.substr(0, 30) << '\n'; // Limit name to 30 chars
+    std::cout << process.name.substr(0, MAX_NAME_LENGTH)
+              << '\n'; // Limit name to 30 chars
   }
 }
 
 void ProcessListing::fetchProcessList() {
   std::vector<int> pids = getAllPIDs();
-  size_t batchSize = 15; // Number of PIDs to process per thread
   size_t numBatches =
-      (pids.size() + batchSize - 1) / batchSize; // Calculate batches
+      (pids.size() + BATCH_SIZE - 1) / BATCH_SIZE; // Calculate batches
   std::vector<std::future<void>> futures;
 
   for (size_t i = 0; i < numBatches; ++i) {
     futures.push_back(std::async(std::launch::async, [&, i]() {
-      size_t start = i * batchSize;
-      size_t end = std::min(start + batchSize, pids.size());
+      size_t start = i * BATCH_SIZE;
+      size_t end = std::min(start + BATCH_SIZE, pids.size());
       for (size_t j = start; j < end; ++j) {
         fetchProcessInfo(pids[j]);
       }
@@ -111,7 +129,7 @@ void ProcessListing::fetchProcessInfo(int pid) {
 
 std::string ProcessListing::getProcessName(int pid) {
   std::string name = "Unknown";
-  std::string path = "/proc/" + std::to_string(pid) + "/comm";
+  std::string path = PROC_COMM_PATH_PREFIX + std::to_string(pid) + "/comm";
   std::ifstream commFile(path);
   if (commFile.is_open()) {
     std::getline(commFile, name);
@@ -134,7 +152,7 @@ double ProcessListing::calculateCPUUsage(int pid) {
   }
 
   std::string ignore;
-  for (int i = 0; i < 13; ++i) {
+  for (int i = 0; i < PROCESS_STAT_FIELDS_TO_SKIP; ++i) {
     statFile >> ignore; // Skip unnecessary fields
   }
   statFile >> utime >> stime >> cutime >> cstime;
@@ -143,7 +161,7 @@ double ProcessListing::calculateCPUUsage(int pid) {
   total_time = utime + stime + cutime + cstime;
 
   // Calculate system-wide CPU time
-  std::ifstream cpuStatFile("/proc/stat");
+  std::ifstream cpuStatFile(PROC_STAT_PATH);
   if (!cpuStatFile.is_open()) {
     return 0.0;
   }
@@ -156,26 +174,19 @@ double ProcessListing::calculateCPUUsage(int pid) {
   iss >> ignore; // Skip 'cpu'
   unsigned long long user, nice, system, idle, iowait, irq, softirq, steal;
   iss >> user >> nice >> system >> idle >> iowait >> irq >> softirq >> steal;
+
   system_total_time =
       user + nice + system + idle + iowait + irq + softirq + steal;
+  total_time -= prev_proc_time;
+  system_total_time -= prev_total_time;
 
-  // Fetch previous values for the process
-  if (prev_times.find(pid) != prev_times.end()) {
-    prev_proc_time = prev_times[pid][0];
-    prev_total_time = prev_times[pid][1];
-  }
+  prev_proc_time = total_time;
+  prev_total_time = system_total_time;
 
-  // Calculate CPU usage
-  unsigned long long total_delta = system_total_time - prev_total_time;
-  unsigned long long proc_delta = total_time - prev_proc_time;
-
-  prev_times[pid] = {total_time, system_total_time};
-
-  if (total_delta == 0) {
+  // Return CPU usage as percentage
+  if (system_total_time == 0)
     return 0.0;
-  }
-
-  return (static_cast<double>(proc_delta) / total_delta) * 100.0;
+  return (static_cast<double>(total_time) / system_total_time) * 100.0;
 }
 
 double ProcessListing::calculateMemoryUsage(int pid) {
