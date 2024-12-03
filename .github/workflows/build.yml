@@ -21,7 +21,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/.conan/data
-          key: ${{ runner.os }}-conan-${{ hashFiles('challengeLC/process_manager/conanfile.txt') }}
+          key: ${{ runner.os }}-conan-${{ hashFiles('process_manager/conanfile.txt') }}
           restore-keys: |
             ${{ runner.os }}-conan-
 
@@ -38,6 +38,9 @@ jobs:
           python -m venv myenv
           source myenv/bin/activate
 
+          # Create a default Conan profile if it doesn't exist
+          conan profile detect --force
+
           # Install dependencies using Conan
           cd process_manager
           mkdir -p build
@@ -52,7 +55,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: build/
-          key: ${{ runner.os }}-cmake-${{ hashFiles('challengeLC/process_manager/CMakeLists.txt') }}
+          key: ${{ runner.os }}-cmake-${{ hashFiles('process_manager/CMakeLists.txt') }}
           restore-keys: |
             ${{ runner.os }}-cmake-
 
@@ -61,11 +64,11 @@ jobs:
         run: |
           cd process_manager/build
           cmake .. -DCMAKE_BUILD_TYPE=Release
-          cmake --build . --config Release
+          cmake --build .  # No need for --config Release, this works for single configuration builds
 
       # 7. Upload Build Artifact
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v3
         with:
           name: build-output
-          path: challengeLC/process_manager/build/
+          path: process_manager/build/
