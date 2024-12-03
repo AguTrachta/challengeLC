@@ -60,7 +60,7 @@ jobs:
       - name: Build Project
         run: |
           cd build
-          cmake .. -DCMAKE_BUILD_TYPE=Release
+          cmake ../process_manager -DCMAKE_BUILD_TYPE=Release
           cmake --build . --config Release
 
       # 9. Upload Build Artifact
