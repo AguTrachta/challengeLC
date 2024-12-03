@@ -35,14 +35,29 @@ jobs:
         run: |
           conan profile detect --force
 
-      # 5. Install Dependencies with Conan
+      # 5. Install spdlog from Source
+      - name: Install spdlog
+        run: |
+          sudo apt update
+          sudo apt install -y cmake gcc g++ git
+          
+          # Clone and build spdlog
+          git clone --recursive https://github.com/gabime/spdlog.git
+          cd spdlog
+          mkdir -p build
+          cd build
+          cmake ..
+          sudo make install
+          cd ../../
+
+      # 6. Install Dependencies with Conan
       - name: Install Dependencies with Conan
         run: |
           mkdir -p build
           cd build
           conan install ../process_manager --build=missing
 
-      # 6. Cache CMake Build Directory
+      # 7. Cache CMake Build Directory
       - name: Cache CMake Build Directory
         uses: actions/cache@v3
         with:
@@ -51,14 +66,14 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-cmake-
 
-      # 7. Build Project
+      # 8. Build Project
       - name: Build Project
         run: |
           cd build
           cmake ../process_manager -DCMAKE_BUILD_TYPE=Release
           cmake --build . --config Release
 
-      # 8. Upload Build Artifact
+      # 9. Upload Build Artifact
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v3
         with:
