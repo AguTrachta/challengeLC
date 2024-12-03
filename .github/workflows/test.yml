@@ -1,0 +1,87 @@
+
+name: Testing and Code Coverage
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout Repository
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      # 2. Cache Conan Packages
+      - name: Cache Conan Packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.conan/data
+          key: ${{ runner.os }}-conan-${{ hashFiles('process_manager/conanfile.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-conan-
+
+      # 3. Upgrade pip
+      - name: Upgrade pip
+        run: |
+          python -m pip install --upgrade pip
+
+      # 4. Install Conan via pip
+      - name: Install Conan
+        run: |
+          pip install conan
+
+      # 5. Install Dependencies with Conan
+      - name: Install Dependencies with Conan
+        run: |
+          mkdir -p build
+          cd build
+          conan install ../process_manager --build=missing
+
+      # 6. Cache CMake Build Directory
+      - name: Cache CMake Build Directory
+        uses: actions/cache@v3
+        with:
+          path: build/
+          key: ${{ runner.os }}-cmake-${{ hashFiles('process_manager/CMakeLists.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-cmake-
+
+      # 7. Build Project with Tests Enabled
+      - name: Build Project with Tests
+        run: |
+          cd build
+          cmake ../process_manager -DCMAKE_BUILD_TYPE=Debug -DBUILD_TESTS=ON
+          cmake --build . --config Debug
+
+      # 8. Run Tests
+      - name: Run Tests
+        run: |
+          cd build
+          ctest --output-on-failure
+
+      # 9. Install gcovr for Coverage Reporting
+      - name: Install gcovr
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gcovr
+
+      # 10. Generate Code Coverage Report
+      - name: Generate Code Coverage Report
+        run: |
+          cd build
+          gcovr -r ../process_manager --xml-pretty -o coverage.xml
+          gcovr -r ../process_manager --html-details -o coverage.html
+
+      # 11. Upload Coverage Reports as Artifacts
+      - name: Upload Coverage Reports
+        uses: actions/upload-artifact@v3
+        with:
+          name: CoverageReports
+          path: |
+            build/coverage.xml
+            build/coverage.html

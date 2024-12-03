@@ -1,0 +1,66 @@
+
+name: Build
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout Repository
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      # 2. Cache Conan Packages
+      - name: Cache Conan Packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.conan/data
+          key: ${{ runner.os }}-conan-${{ hashFiles('process_manager/conanfile.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-conan-
+
+      # 3. Upgrade pip
+      - name: Upgrade pip
+        run: |
+          python -m pip install --upgrade pip
+
+      # 4. Install Conan via pip
+      - name: Install Conan
+        run: |
+          pip install conan
+
+      # 5. Install Dependencies with Conan
+      - name: Install Dependencies with Conan
+        run: |
+          mkdir -p build
+          cd build
+          conan install ../process_manager --build=missing
+
+      # 6. Cache CMake Build Directory
+      - name: Cache CMake Build Directory
+        uses: actions/cache@v3
+        with:
+          path: build/
+          key: ${{ runner.os }}-cmake-${{ hashFiles('process_manager/CMakeLists.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-cmake-
+
+      # 7. Build Project
+      - name: Build Project
+        run: |
+          cd build
+          cmake ../process_manager -DCMAKE_BUILD_TYPE=Release
+          cmake --build . --config Release
+
+      # 8. Upload Build Artifact
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-output
+          path: build/

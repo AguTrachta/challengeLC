@@ -1,0 +1,27 @@
+
+name: Code Formatting and Style Checks
+
+on:
+  pull_request:
+    branches: [ main, develop ]
+  push:
+    branches: [ main, develop ]
+
+jobs:
+  clang-format:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Install Clang-Format
+        run: sudo apt-get update && sudo apt-get install -y clang-format
+
+      - name: Run Clang-Format
+        run: |
+          clang-format -i process_manager/**/*.cpp process_manager/**/*.h
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add process_manager/**/*.cpp process_manager/**/*.h
+          git diff --cached --exit-code
