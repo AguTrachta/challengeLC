@@ -25,24 +25,32 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-conan-
 
-      # 3. Upgrade pip
-      - name: Upgrade pip
-        run: |
-          python -m pip install --upgrade pip
-
-      # 4. Install Conan via pip
+      # 3. Install Conan
       - name: Install Conan
         run: |
+          python -m pip install --upgrade pip
           pip install conan
 
-      # 5. Install Dependencies with Conan
+      # 4. Set up Environment and Install Dependencies with Conan
       - name: Install Dependencies with Conan
         run: |
+          # Set up virtual environment
+          python -m venv myenv
+          source myenv/bin/activate
+
+          # Create a default Conan profile if it doesn't exist
+          conan profile detect --force
+
+          # Install dependencies using Conan
+          cd process_manager
           mkdir -p build
           cd build
-          conan install ../process_manager --build=missing
+          conan install .. --build=missing
 
-      # 6. Cache CMake Build Directory
+          # Deactivate virtual environment
+          deactivate
+
+      # 5. Cache CMake Build Directory
       - name: Cache CMake Build Directory
         uses: actions/cache@v3
         with:
@@ -51,37 +59,37 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-cmake-
 
-      # 7. Build Project with Tests Enabled
+      # 6. Build Project with Tests Enabled
       - name: Build Project with Tests
         run: |
-          cd build
-          cmake ../process_manager -DCMAKE_BUILD_TYPE=Debug -DBUILD_TESTS=ON
-          cmake --build . --config Debug
+          cd process_manager/build
+          cmake .. -DCMAKE_BUILD_TYPE=Debug -DBUILD_TESTS=ON
+          cmake --build .  # No need for --config Debug, this works for single configuration builds
 
-      # 8. Run Tests
+      # 7. Run Tests
       - name: Run Tests
         run: |
-          cd build
+          cd process_manager/build
           ctest --output-on-failure
 
-      # 9. Install gcovr for Coverage Reporting
+      # 8. Install gcovr for Coverage Reporting
       - name: Install gcovr
         run: |
           sudo apt-get update
           sudo apt-get install -y gcovr
 
-      # 10. Generate Code Coverage Report
+      # 9. Generate Code Coverage Report
       - name: Generate Code Coverage Report
         run: |
-          cd build
+          cd process_manager/build
           gcovr -r ../process_manager --xml-pretty -o coverage.xml
           gcovr -r ../process_manager --html-details -o coverage.html
 
-      # 11. Upload Coverage Reports as Artifacts
+      # 10. Upload Coverage Reports as Artifacts
       - name: Upload Coverage Reports
         uses: actions/upload-artifact@v3
         with:
           name: CoverageReports
           path: |
-            build/coverage.xml
-            build/coverage.html
+            process_manager/build/coverage.xml
+            process_manager/build/coverage.html

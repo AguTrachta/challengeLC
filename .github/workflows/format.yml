@@ -1,5 +1,5 @@
 
-name: Code Formatting and Style Checks
+name: Code Formatting with Clang-Format
 
 on:
   pull_request:
@@ -12,16 +12,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Step 1: Checkout the code
       - name: Checkout Repository
         uses: actions/checkout@v3
 
+      # Step 2: Install clang-format
       - name: Install Clang-Format
         run: sudo apt-get update && sudo apt-get install -y clang-format
 
+      # Step 3: Run clang-format to check and apply formatting
       - name: Run Clang-Format
         run: |
+          # Apply clang-format to the codebase
           clang-format -i process_manager/**/*.cpp process_manager/**/*.h
+
+          # Check for changes after formatting
+          git diff --exit-code || echo "There are formatting changes"
+
+      # Step 4: Commit and push changes if any formatting was done
+      - name: Commit and Push Changes (if any)
+        if: success() && (git diff --exit-code || echo "Changes detected")
+        run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          git add process_manager/**/*.cpp process_manager/**/*.h
-          git diff --cached --exit-code
+          git add .
+          git commit -m "Apply clang-format"
+          git push
