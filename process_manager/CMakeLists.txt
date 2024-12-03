@@ -6,8 +6,12 @@ project(HighPerformanceProcessManager VERSION 1.0 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Include the Conan toolchain if available
-include(${CMAKE_BINARY_DIR}/conan_toolchain.cmake OPTIONAL)
+# Automatically include the Conan toolchain file if Conan is used
+if(EXISTS "${CMAKE_BINARY_DIR}/conan_toolchain.cmake")
+    include(${CMAKE_BINARY_DIR}/conan_toolchain.cmake)
+else()
+    message(STATUS "Conan toolchain not found. Please run 'conan install' first.")
+endif()
 
 # Add Conan's CMakeDeps output directory to the CMake module path
 list(APPEND CMAKE_PREFIX_PATH "${CMAKE_BINARY_DIR}/Release/generators")
@@ -40,4 +44,3 @@ target_link_libraries(resource_test PRIVATE GTest::GTest GTest::gmock GTest::Mai
 
 # Add test to CTest
 add_test(NAME resource_test COMMAND resource_test)
-
