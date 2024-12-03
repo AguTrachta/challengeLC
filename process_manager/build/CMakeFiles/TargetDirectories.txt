@@ -1,3 +1,5 @@
-//home/agustin/Documents/importante/PPS/challengeLC/process_manager/build/CMakeFiles/process_manager.dir
-//home/agustin/Documents/importante/PPS/challengeLC/process_manager/build/CMakeFiles/edit_cache.dir
-//home/agustin/Documents/importante/PPS/challengeLC/process_manager/build/CMakeFiles/rebuild_cache.dir
+/home/agustin/Documents/importante/PPS/challengeLC/process_manager/build/CMakeFiles/process_manager.dir
+/home/agustin/Documents/importante/PPS/challengeLC/process_manager/build/CMakeFiles/resource_test.dir
+/home/agustin/Documents/importante/PPS/challengeLC/process_manager/build/CMakeFiles/test.dir
+/home/agustin/Documents/importante/PPS/challengeLC/process_manager/build/CMakeFiles/edit_cache.dir
+/home/agustin/Documents/importante/PPS/challengeLC/process_manager/build/CMakeFiles/rebuild_cache.dir

@@ -100,7 +100,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <a class="code hl_function" href="classThreadPool.html#a44d3d2ab618970605e684efc216655eb">~ThreadPool</a>();</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="classThreadPool.html#a3aff84dd9e4f10279d55b7a7bc7009cb">   60</a></span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> F&gt; <span class="keywordtype">void</span> <a class="code hl_function" href="classThreadPool.html#a3aff84dd9e4f10279d55b7a7bc7009cb">enqueue</a>(F &amp;&amp;f);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> F&gt; <span class="keywordtype">void</span> <a class="code hl_function" href="classThreadPool.html#a3aff84dd9e4f10279d55b7a7bc7009cb">enqueue</a>(F &amp;&amp;f);</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="classThreadPool.html#acab1831895d9b9dbaa11a951e04b894c">   67</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classThreadPool.html#acab1831895d9b9dbaa11a951e04b894c">stop</a>();</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
@@ -129,10 +129,20 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>};</div>
 </div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="preprocessor">#endif </span><span class="comment">// THREAD_POOL_H</span></div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="comment">// Template function definition inside the header</span></div>
+<div class="foldopen" id="foldopen00105" data-start="{" data-end="}">
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="classThreadPool.html#a3aff84dd9e4f10279d55b7a7bc7009cb">  105</a></span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> F&gt; <span class="keywordtype">void</span> <a class="code hl_function" href="classThreadPool.html#a3aff84dd9e4f10279d55b7a7bc7009cb">ThreadPool::enqueue</a>(F &amp;&amp;f) {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  {</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    std::lock_guard&lt;std::mutex&gt; lock(tasksMutex_);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    tasks_.emplace(std::forward&lt;F&gt;(f)); <span class="comment">// Add the task to the queue</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  }</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  cv_.notify_one(); <span class="comment">// Notify one thread that a new task is available</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>}</div>
+</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="preprocessor">#endif </span><span class="comment">// THREAD_POOL_H</span></div>
 <div class="ttc" id="aclassThreadPool_html"><div class="ttname"><a href="classThreadPool.html">ThreadPool</a></div><div class="ttdoc">A class for managing a pool of worker threads to execute tasks concurrently.</div><div class="ttdef"><b>Definition</b> thread_pool.h:33</div></div>
-<div class="ttc" id="aclassThreadPool_html_a3aff84dd9e4f10279d55b7a7bc7009cb"><div class="ttname"><a href="classThreadPool.html#a3aff84dd9e4f10279d55b7a7bc7009cb">ThreadPool::enqueue</a></div><div class="ttdeci">void enqueue(F &amp;&amp;f)</div><div class="ttdoc">Templated method to enqueue a task into the thread pool.</div></div>
+<div class="ttc" id="aclassThreadPool_html_a3aff84dd9e4f10279d55b7a7bc7009cb"><div class="ttname"><a href="classThreadPool.html#a3aff84dd9e4f10279d55b7a7bc7009cb">ThreadPool::enqueue</a></div><div class="ttdeci">void enqueue(F &amp;&amp;f)</div><div class="ttdoc">Templated method to enqueue a task into the thread pool.</div><div class="ttdef"><b>Definition</b> thread_pool.h:105</div></div>
 <div class="ttc" id="aclassThreadPool_html_a44d3d2ab618970605e684efc216655eb"><div class="ttname"><a href="classThreadPool.html#a44d3d2ab618970605e684efc216655eb">ThreadPool::~ThreadPool</a></div><div class="ttdeci">~ThreadPool()</div><div class="ttdoc">Destructor that ensures all threads are joined before destruction.</div><div class="ttdef"><b>Definition</b> thread_pool.cpp:13</div></div>
 <div class="ttc" id="aclassThreadPool_html_a73d2d1bbe5807e987be5cff0002de160"><div class="ttname"><a href="classThreadPool.html#a73d2d1bbe5807e987be5cff0002de160">ThreadPool::waitForAll</a></div><div class="ttdeci">void waitForAll()</div><div class="ttdoc">Waits for all tasks to complete.</div><div class="ttdef"><b>Definition</b> thread_pool.cpp:55</div></div>
 <div class="ttc" id="aclassThreadPool_html_acab1831895d9b9dbaa11a951e04b894c"><div class="ttname"><a href="classThreadPool.html#acab1831895d9b9dbaa11a951e04b894c">ThreadPool::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdoc">Explicit method to stop the pool gracefully.</div></div>

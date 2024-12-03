@@ -1,7 +1,7 @@
 CMakeFiles/process_manager.dir/src/process_manager.cpp.o: \
- //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/process_manager.cpp \
+ /home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/process_manager.cpp \
  /usr/include/stdc-predef.h \
- //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/../include/process_manager.h \
+ /home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/../include/process_manager.h \
  /usr/include/c++/13/string /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -130,12 +130,12 @@ CMakeFiles/process_manager.dir/src/process_manager.cpp.o: \
  /usr/include/c++/13/bits/uses_allocator.h \
  /usr/include/c++/13/bits/uses_allocator_args.h /usr/include/c++/13/tuple \
  /usr/include/c++/13/bits/ranges_util.h \
- //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/../include/command_parser.h \
+ /home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/../include/command_parser.h \
  /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc \
- //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/../include/logger.h \
+ /home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/../include/logger.h \
  /home/agustin/.conan2/p/b/spdlo088f6ab2d190f/p/include/spdlog/spdlog.h \
  /home/agustin/.conan2/p/b/spdlo088f6ab2d190f/p/include/spdlog/common.h \
  /home/agustin/.conan2/p/b/spdlo088f6ab2d190f/p/include/spdlog/details/null_mutex.h \
@@ -304,13 +304,13 @@ CMakeFiles/process_manager.dir/src/process_manager.cpp.o: \
  /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
  /usr/include/c++/13/bits/fstream.tcc \
- //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/../include/process_control.h \
- //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/../include/process_listing.h \
- //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/../include/resource_monitoring.h \
- //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/../include/data_monitoring.h \
+ /home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/../include/process_control.h \
+ /home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/../include/process_listing.h \
+ /home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/../include/resource_monitoring.h \
+ /home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/../include/data_monitoring.h \
  /usr/include/c++/13/iostream \
- //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/../include/logger.h \
- //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/../include/thread_pool.h \
+ /home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/../include/logger.h \
+ /home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/../include/thread_pool.h \
  /usr/include/c++/13/queue /usr/include/c++/13/deque \
  /usr/include/c++/13/bits/stl_deque.h /usr/include/c++/13/bits/deque.tcc \
  /usr/include/c++/13/bits/stl_queue.h

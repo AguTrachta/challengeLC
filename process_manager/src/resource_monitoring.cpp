@@ -30,7 +30,7 @@ void ResourceMonitoring::startMonitoring() {
 
   monitoring_ = true;
   logger_.logAction("Starting resource monitoring.");
-  std::cout << "Starting parallelized resource monitoring...\n";
+
   std::cout << "Press Enter to stop the monitor.\n";
 
   dataMonitor.startMonitoring();
@@ -54,7 +54,6 @@ void ResourceMonitoring::stopMonitoring() {
   std::unique_lock<std::mutex> lock(monitoringMutex_);
   monitoring_ = false;
   logger_.logAction("Stopping resource monitoring.");
-  std::cout << "Stopping resource monitoring...\n";
 
   stopCondition_.notify_all(); // Notify all waiting threads to stop
   pool_.waitForAll();

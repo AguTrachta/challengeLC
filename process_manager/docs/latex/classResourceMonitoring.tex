@@ -19,7 +19,11 @@ A class for monitoring system resources such as CPU and memory.
 void \mbox{\hyperlink{classResourceMonitoring_a87477a8d0270b97da731d41d7862c2ee}{start\+Monitoring}} ()
 \begin{DoxyCompactList}\small\item\em Starts the monitoring process. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classResourceMonitoring_aaafc3fb0291f1843bcb79dea679a72de}{stop\+Monitoring}} ()
-\begin{DoxyCompactList}\small\item\em Stops the monitoring process. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Stops the monitoring process. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDataMonitoring}{Data\+Monitoring}} \& \mbox{\hyperlink{classResourceMonitoring_a8fbefd1f3a478cc01d675eb2f26b0d52}{get\+Data\+Monitor}} ()
+\begin{DoxyCompactList}\small\item\em Gets the {\ttfamily \doxylink{classDataMonitoring}{Data\+Monitoring}} object to access resource data. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classResourceMonitoring_a8f8602d56bf48d5af97a64d337a1976d}{get\+Monitoring\+Bool}} () const
+\begin{DoxyCompactList}\small\item\em Gets the monitoring status. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -51,6 +55,36 @@ Destructor for the \doxylink{classResourceMonitoring}{Resource\+Monitoring} clas
 Stops the monitoring process if it is still running and ensures proper cleanup. 
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{classResourceMonitoring_a8fbefd1f3a478cc01d675eb2f26b0d52}\label{classResourceMonitoring_a8fbefd1f3a478cc01d675eb2f26b0d52} 
+\index{ResourceMonitoring@{ResourceMonitoring}!getDataMonitor@{getDataMonitor}}
+\index{getDataMonitor@{getDataMonitor}!ResourceMonitoring@{ResourceMonitoring}}
+\doxysubsubsection{\texorpdfstring{getDataMonitor()}{getDataMonitor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDataMonitoring}{Data\+Monitoring}} \& Resource\+Monitoring\+::get\+Data\+Monitor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the {\ttfamily \doxylink{classDataMonitoring}{Data\+Monitoring}} object to access resource data. 
+
+Returns a reference to the {\ttfamily \doxylink{classDataMonitoring}{Data\+Monitoring}} object, allowing access to the system resource monitoring data (e.\+g., CPU and memory usage).
+
+\begin{DoxyReturn}{Returns}
+A reference to the {\ttfamily \doxylink{classDataMonitoring}{Data\+Monitoring}} object. 
+\end{DoxyReturn}
+\Hypertarget{classResourceMonitoring_a8f8602d56bf48d5af97a64d337a1976d}\label{classResourceMonitoring_a8f8602d56bf48d5af97a64d337a1976d} 
+\index{ResourceMonitoring@{ResourceMonitoring}!getMonitoringBool@{getMonitoringBool}}
+\index{getMonitoringBool@{getMonitoringBool}!ResourceMonitoring@{ResourceMonitoring}}
+\doxysubsubsection{\texorpdfstring{getMonitoringBool()}{getMonitoringBool()}}
+{\footnotesize\ttfamily bool Resource\+Monitoring\+::get\+Monitoring\+Bool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the monitoring status. 
+
+Returns the current status of the monitoring process (true if active, false otherwise).
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if monitoring is active, {\ttfamily false} otherwise. 
+\end{DoxyReturn}
 \Hypertarget{classResourceMonitoring_a87477a8d0270b97da731d41d7862c2ee}\label{classResourceMonitoring_a87477a8d0270b97da731d41d7862c2ee} 
 \index{ResourceMonitoring@{ResourceMonitoring}!startMonitoring@{startMonitoring}}
 \index{startMonitoring@{startMonitoring}!ResourceMonitoring@{ResourceMonitoring}}

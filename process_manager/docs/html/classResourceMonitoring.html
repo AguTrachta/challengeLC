@@ -95,6 +95,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aaafc3fb0291f1843bcb79dea679a72de" id="r_aaafc3fb0291f1843bcb79dea679a72de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classResourceMonitoring.html#aaafc3fb0291f1843bcb79dea679a72de">stopMonitoring</a> ()</td></tr>
 <tr class="memdesc:aaafc3fb0291f1843bcb79dea679a72de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops the monitoring process.  <br /></td></tr>
 <tr class="separator:aaafc3fb0291f1843bcb79dea679a72de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fbefd1f3a478cc01d675eb2f26b0d52" id="r_a8fbefd1f3a478cc01d675eb2f26b0d52"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDataMonitoring.html">DataMonitoring</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classResourceMonitoring.html#a8fbefd1f3a478cc01d675eb2f26b0d52">getDataMonitor</a> ()</td></tr>
+<tr class="memdesc:a8fbefd1f3a478cc01d675eb2f26b0d52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the <code><a class="el" href="classDataMonitoring.html" title="A class that monitors CPU and memory usage.">DataMonitoring</a></code> object to access resource data.  <br /></td></tr>
+<tr class="separator:a8fbefd1f3a478cc01d675eb2f26b0d52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f8602d56bf48d5af97a64d337a1976d" id="r_a8f8602d56bf48d5af97a64d337a1976d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classResourceMonitoring.html#a8f8602d56bf48d5af97a64d337a1976d">getMonitoringBool</a> () const</td></tr>
+<tr class="memdesc:a8f8602d56bf48d5af97a64d337a1976d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the monitoring status.  <br /></td></tr>
+<tr class="separator:a8f8602d56bf48d5af97a64d337a1976d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A class for monitoring system resources such as CPU and memory. </p>
@@ -141,6 +147,64 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a8fbefd1f3a478cc01d675eb2f26b0d52" name="a8fbefd1f3a478cc01d675eb2f26b0d52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fbefd1f3a478cc01d675eb2f26b0d52">&#9670;&#160;</a></span>getDataMonitor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classDataMonitoring.html">DataMonitoring</a> &amp; ResourceMonitoring::getDataMonitor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the <code><a class="el" href="classDataMonitoring.html" title="A class that monitors CPU and memory usage.">DataMonitoring</a></code> object to access resource data. </p>
+<p>Returns a reference to the <code><a class="el" href="classDataMonitoring.html" title="A class that monitors CPU and memory usage.">DataMonitoring</a></code> object, allowing access to the system resource monitoring data (e.g., CPU and memory usage).</p>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the <code><a class="el" href="classDataMonitoring.html" title="A class that monitors CPU and memory usage.">DataMonitoring</a></code> object. </dd></dl>
+
+</div>
+</div>
+<a id="a8f8602d56bf48d5af97a64d337a1976d" name="a8f8602d56bf48d5af97a64d337a1976d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f8602d56bf48d5af97a64d337a1976d">&#9670;&#160;</a></span>getMonitoringBool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ResourceMonitoring::getMonitoringBool </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the monitoring status. </p>
+<p>Returns the current status of the monitoring process (true if active, false otherwise).</p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if monitoring is active, <code>false</code> otherwise. </dd></dl>
+
+</div>
+</div>
 <a id="a87477a8d0270b97da731d41d7862c2ee" name="a87477a8d0270b97da731d41d7862c2ee"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a87477a8d0270b97da731d41d7862c2ee">&#9670;&#160;</a></span>startMonitoring()</h2>
 

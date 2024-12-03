@@ -7,7 +7,7 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
-  "//home/agustin/Documents/importante/PPS/challengeLC/process_manager/CMakeLists.txt"
+  "/home/agustin/Documents/importante/PPS/challengeLC/process_manager/CMakeLists.txt"
   "CMakeFiles/3.31.0-rc2/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.31.0-rc2/CMakeSystem.cmake"
   "Release/generators/cmakedeps_macros.cmake"
@@ -21,6 +21,10 @@ set(CMAKE_MAKEFILE_DEPENDS
   "Release/generators/spdlog-config.cmake"
   "Release/generators/spdlog-release-x86_64-data.cmake"
   "Release/generators/spdlogTargets.cmake"
+  "/usr/local/lib/cmake/GTest/GTestConfig.cmake"
+  "/usr/local/lib/cmake/GTest/GTestConfigVersion.cmake"
+  "/usr/local/lib/cmake/GTest/GTestTargets-noconfig.cmake"
+  "/usr/local/lib/cmake/GTest/GTestTargets.cmake"
   "/usr/local/share/cmake-3.31/Modules/CMakeCXXInformation.cmake"
   "/usr/local/share/cmake-3.31/Modules/CMakeCommonLanguageInclude.cmake"
   "/usr/local/share/cmake-3.31/Modules/CMakeFindDependencyMacro.cmake"
@@ -35,9 +39,11 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/local/share/cmake-3.31/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
   "/usr/local/share/cmake-3.31/Modules/Compiler/GNU-CXX.cmake"
   "/usr/local/share/cmake-3.31/Modules/Compiler/GNU.cmake"
+  "/usr/local/share/cmake-3.31/Modules/FindGTest.cmake"
   "/usr/local/share/cmake-3.31/Modules/FindPackageHandleStandardArgs.cmake"
   "/usr/local/share/cmake-3.31/Modules/FindPackageMessage.cmake"
   "/usr/local/share/cmake-3.31/Modules/FindThreads.cmake"
+  "/usr/local/share/cmake-3.31/Modules/GoogleTest.cmake"
   "/usr/local/share/cmake-3.31/Modules/Internal/CMakeCXXLinkerInformation.cmake"
   "/usr/local/share/cmake-3.31/Modules/Internal/CMakeCommonLinkerInformation.cmake"
   "/usr/local/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake"
@@ -67,4 +73,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/process_manager.dir/DependInfo.cmake"
+  "CMakeFiles/resource_test.dir/DependInfo.cmake"
   )

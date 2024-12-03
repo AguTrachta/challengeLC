@@ -11,9 +11,9 @@ process_manager: \
   CMakeFiles/process_manager.dir/src/process_manager.cpp.o \
   CMakeFiles/process_manager.dir/src/resource_monitoring.cpp.o \
   CMakeFiles/process_manager.dir/src/thread_pool.cpp.o \
-  //home/agustin/.conan2/p/b/spdlo088f6ab2d190f/p/lib/libspdlog.a \
+  /home/agustin/.conan2/p/b/spdlo088f6ab2d190f/p/lib/libspdlog.a \
   /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/libpthread.a \
-  //home/agustin/.conan2/p/b/fmt5daa35896c20a/p/lib/libfmt.a \
+  /home/agustin/.conan2/p/b/fmt5daa35896c20a/p/lib/libfmt.a \
   /usr/lib/gcc/x86_64-linux-gnu/13/libstdc++.so \
   /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/libm.so \
   /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/libm.so \
@@ -66,11 +66,11 @@ CMakeFiles/process_manager.dir/src/resource_monitoring.cpp.o:
 
 CMakeFiles/process_manager.dir/src/thread_pool.cpp.o:
 
-//home/agustin/.conan2/p/b/spdlo088f6ab2d190f/p/lib/libspdlog.a:
+/home/agustin/.conan2/p/b/spdlo088f6ab2d190f/p/lib/libspdlog.a:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/libpthread.a:
 
-//home/agustin/.conan2/p/b/fmt5daa35896c20a/p/lib/libfmt.a:
+/home/agustin/.conan2/p/b/fmt5daa35896c20a/p/lib/libfmt.a:
 
 /usr/lib/gcc/x86_64-linux-gnu/13/libstdc++.so:
 

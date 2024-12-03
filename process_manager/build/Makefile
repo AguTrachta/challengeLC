@@ -57,13 +57,23 @@ RM = /usr/local/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = //home/agustin/Documents/importante/PPS/challengeLC/process_manager
+CMAKE_SOURCE_DIR = /home/agustin/Documents/importante/PPS/challengeLC/process_manager
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = //home/agustin/Documents/importante/PPS/challengeLC/process_manager/build
+CMAKE_BINARY_DIR = /home/agustin/Documents/importante/PPS/challengeLC/process_manager/build
 
 #=============================================================================
 # Targets provided globally by CMake.
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
+	/usr/local/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -87,9 +97,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start //home/agustin/Documents/importante/PPS/challengeLC/process_manager/build/CMakeFiles //home/agustin/Documents/importante/PPS/challengeLC/process_manager/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/agustin/Documents/importante/PPS/challengeLC/process_manager/build/CMakeFiles /home/agustin/Documents/importante/PPS/challengeLC/process_manager/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start //home/agustin/Documents/importante/PPS/challengeLC/process_manager/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/agustin/Documents/importante/PPS/challengeLC/process_manager/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -129,6 +139,19 @@ process_manager/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/process_manager.dir/build.make CMakeFiles/process_manager.dir/build
 .PHONY : process_manager/fast
 
+#=============================================================================
+# Target rules for targets named resource_test
+
+# Build rule for target.
+resource_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 resource_test
+.PHONY : resource_test
+
+# fast build rule for target.
+resource_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/resource_test.dir/build.make CMakeFiles/resource_test.dir/build
+.PHONY : resource_test/fast
+
 src/command_parser.o: src/command_parser.cpp.o
 .PHONY : src/command_parser.o
 
@@ -159,6 +182,7 @@ src/data_monitoring.o: src/data_monitoring.cpp.o
 # target to build an object file
 src/data_monitoring.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/process_manager.dir/build.make CMakeFiles/process_manager.dir/src/data_monitoring.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/resource_test.dir/build.make CMakeFiles/resource_test.dir/src/data_monitoring.cpp.o
 .PHONY : src/data_monitoring.cpp.o
 
 src/data_monitoring.i: src/data_monitoring.cpp.i
@@ -167,6 +191,7 @@ src/data_monitoring.i: src/data_monitoring.cpp.i
 # target to preprocess a source file
 src/data_monitoring.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/process_manager.dir/build.make CMakeFiles/process_manager.dir/src/data_monitoring.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/resource_test.dir/build.make CMakeFiles/resource_test.dir/src/data_monitoring.cpp.i
 .PHONY : src/data_monitoring.cpp.i
 
 src/data_monitoring.s: src/data_monitoring.cpp.s
@@ -175,6 +200,7 @@ src/data_monitoring.s: src/data_monitoring.cpp.s
 # target to generate assembly for a file
 src/data_monitoring.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/process_manager.dir/build.make CMakeFiles/process_manager.dir/src/data_monitoring.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/resource_test.dir/build.make CMakeFiles/resource_test.dir/src/data_monitoring.cpp.s
 .PHONY : src/data_monitoring.cpp.s
 
 src/logger.o: src/logger.cpp.o
@@ -183,6 +209,7 @@ src/logger.o: src/logger.cpp.o
 # target to build an object file
 src/logger.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/process_manager.dir/build.make CMakeFiles/process_manager.dir/src/logger.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/resource_test.dir/build.make CMakeFiles/resource_test.dir/src/logger.cpp.o
 .PHONY : src/logger.cpp.o
 
 src/logger.i: src/logger.cpp.i
@@ -191,6 +218,7 @@ src/logger.i: src/logger.cpp.i
 # target to preprocess a source file
 src/logger.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/process_manager.dir/build.make CMakeFiles/process_manager.dir/src/logger.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/resource_test.dir/build.make CMakeFiles/resource_test.dir/src/logger.cpp.i
 .PHONY : src/logger.cpp.i
 
 src/logger.s: src/logger.cpp.s
@@ -199,6 +227,7 @@ src/logger.s: src/logger.cpp.s
 # target to generate assembly for a file
 src/logger.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/process_manager.dir/build.make CMakeFiles/process_manager.dir/src/logger.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/resource_test.dir/build.make CMakeFiles/resource_test.dir/src/logger.cpp.s
 .PHONY : src/logger.cpp.s
 
 src/main.o: src/main.cpp.o
@@ -303,6 +332,7 @@ src/resource_monitoring.o: src/resource_monitoring.cpp.o
 # target to build an object file
 src/resource_monitoring.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/process_manager.dir/build.make CMakeFiles/process_manager.dir/src/resource_monitoring.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/resource_test.dir/build.make CMakeFiles/resource_test.dir/src/resource_monitoring.cpp.o
 .PHONY : src/resource_monitoring.cpp.o
 
 src/resource_monitoring.i: src/resource_monitoring.cpp.i
@@ -311,6 +341,7 @@ src/resource_monitoring.i: src/resource_monitoring.cpp.i
 # target to preprocess a source file
 src/resource_monitoring.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/process_manager.dir/build.make CMakeFiles/process_manager.dir/src/resource_monitoring.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/resource_test.dir/build.make CMakeFiles/resource_test.dir/src/resource_monitoring.cpp.i
 .PHONY : src/resource_monitoring.cpp.i
 
 src/resource_monitoring.s: src/resource_monitoring.cpp.s
@@ -319,6 +350,7 @@ src/resource_monitoring.s: src/resource_monitoring.cpp.s
 # target to generate assembly for a file
 src/resource_monitoring.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/process_manager.dir/build.make CMakeFiles/process_manager.dir/src/resource_monitoring.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/resource_test.dir/build.make CMakeFiles/resource_test.dir/src/resource_monitoring.cpp.s
 .PHONY : src/resource_monitoring.cpp.s
 
 src/thread_pool.o: src/thread_pool.cpp.o
@@ -327,6 +359,7 @@ src/thread_pool.o: src/thread_pool.cpp.o
 # target to build an object file
 src/thread_pool.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/process_manager.dir/build.make CMakeFiles/process_manager.dir/src/thread_pool.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/resource_test.dir/build.make CMakeFiles/resource_test.dir/src/thread_pool.cpp.o
 .PHONY : src/thread_pool.cpp.o
 
 src/thread_pool.i: src/thread_pool.cpp.i
@@ -335,6 +368,7 @@ src/thread_pool.i: src/thread_pool.cpp.i
 # target to preprocess a source file
 src/thread_pool.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/process_manager.dir/build.make CMakeFiles/process_manager.dir/src/thread_pool.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/resource_test.dir/build.make CMakeFiles/resource_test.dir/src/thread_pool.cpp.i
 .PHONY : src/thread_pool.cpp.i
 
 src/thread_pool.s: src/thread_pool.cpp.s
@@ -343,7 +377,32 @@ src/thread_pool.s: src/thread_pool.cpp.s
 # target to generate assembly for a file
 src/thread_pool.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/process_manager.dir/build.make CMakeFiles/process_manager.dir/src/thread_pool.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/resource_test.dir/build.make CMakeFiles/resource_test.dir/src/thread_pool.cpp.s
 .PHONY : src/thread_pool.cpp.s
+
+tests/resource_test.o: tests/resource_test.cpp.o
+.PHONY : tests/resource_test.o
+
+# target to build an object file
+tests/resource_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/resource_test.dir/build.make CMakeFiles/resource_test.dir/tests/resource_test.cpp.o
+.PHONY : tests/resource_test.cpp.o
+
+tests/resource_test.i: tests/resource_test.cpp.i
+.PHONY : tests/resource_test.i
+
+# target to preprocess a source file
+tests/resource_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/resource_test.dir/build.make CMakeFiles/resource_test.dir/tests/resource_test.cpp.i
+.PHONY : tests/resource_test.cpp.i
+
+tests/resource_test.s: tests/resource_test.cpp.s
+.PHONY : tests/resource_test.s
+
+# target to generate assembly for a file
+tests/resource_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/resource_test.dir/build.make CMakeFiles/resource_test.dir/tests/resource_test.cpp.s
+.PHONY : tests/resource_test.cpp.s
 
 # Help Target
 help:
@@ -353,7 +412,9 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... test"
 	@echo "... process_manager"
+	@echo "... resource_test"
 	@echo "... src/command_parser.o"
 	@echo "... src/command_parser.i"
 	@echo "... src/command_parser.s"
@@ -381,6 +442,9 @@ help:
 	@echo "... src/thread_pool.o"
 	@echo "... src/thread_pool.i"
 	@echo "... src/thread_pool.s"
+	@echo "... tests/resource_test.o"
+	@echo "... tests/resource_test.i"
+	@echo "... tests/resource_test.s"
 .PHONY : help
 
 

@@ -1,3 +1,4 @@
+
 /**
  * @file resource_monitoring.h
  * @brief Provides functionality for monitoring system resources like CPU and
@@ -63,12 +64,32 @@ public:
    */
   void stopMonitoring();
 
+  /**
+   * @brief Gets the `DataMonitoring` object to access resource data.
+   *
+   * Returns a reference to the `DataMonitoring` object, allowing access to
+   * the system resource monitoring data (e.g., CPU and memory usage).
+   *
+   * @return A reference to the `DataMonitoring` object.
+   */
+  DataMonitoring &getDataMonitor() { return dataMonitor; }
+
+  /**
+   * @brief Gets the monitoring status.
+   *
+   * Returns the current status of the monitoring process (true if active,
+   * false otherwise).
+   *
+   * @return `true` if monitoring is active, `false` otherwise.
+   */
+  bool getMonitoringBool() const { return monitoring_; }
+
 private:
   /**
    * @brief Monitors CPU usage.
    *
    * Runs a task that continuously checks and updates CPU usage at regular
-   * intervals.
+   * intervals. This function operates in parallel with other monitoring tasks.
    */
   void monitorCPU();
 
@@ -76,7 +97,7 @@ private:
    * @brief Monitors memory usage.
    *
    * Runs a task that continuously checks and updates memory usage at regular
-   * intervals.
+   * intervals. This function operates in parallel with other monitoring tasks.
    */
   void monitorMemory();
 
@@ -84,15 +105,17 @@ private:
    * @brief Waits for the user to input a command to stop monitoring.
    *
    * The method waits for the user to press Enter to stop the monitoring
-   * process.
+   * process. It listens for the stop signal and coordinates the stopping of
+   * all monitoring tasks.
    */
   void waitForStopInput();
 
   /**
    * @brief Waits for all threads to finish execution.
    *
-   * Ensures that all tasks related to resource monitoring are completed before
-   * exiting.
+   * This function ensures that all tasks related to resource monitoring are
+   * completed before exiting. It waits for the monitoring threads to finish
+   * their execution, ensuring proper synchronization.
    */
   void waitForThreads();
 
@@ -100,7 +123,9 @@ private:
    * @brief Monitors both CPU and memory usage in parallel.
    *
    * Updates the display with CPU and memory usage statistics in real-time,
-   * running in parallel until the monitoring is stopped.
+   * running in parallel until the monitoring is stopped. This method starts
+   * the tasks for monitoring both resources and is intended to run as the main
+   * monitoring process.
    */
   void monitorCPUAndMemory();
 

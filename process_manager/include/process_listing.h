@@ -39,6 +39,7 @@ struct ProcessInfo {
  * ensure thread safety when modifying shared data.
  */
 class ProcessListing {
+
 public:
   /**
    * @brief Constructor for the ProcessListing class.
@@ -125,4 +126,3 @@ private:
 };
 
 #endif // PROCESS_LISTING_H
-

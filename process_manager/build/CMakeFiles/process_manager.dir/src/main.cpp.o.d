@@ -1,7 +1,7 @@
 CMakeFiles/process_manager.dir/src/main.cpp.o: \
- //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/main.cpp \
+ /home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/main.cpp \
  /usr/include/stdc-predef.h \
- //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/../include/logger.h \
+ /home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/../include/logger.h \
  /home/agustin/.conan2/p/b/spdlo088f6ab2d190f/p/include/spdlog/spdlog.h \
  /home/agustin/.conan2/p/b/spdlo088f6ab2d190f/p/include/spdlog/common.h \
  /home/agustin/.conan2/p/b/spdlo088f6ab2d190f/p/include/spdlog/details/null_mutex.h \
@@ -301,4 +301,4 @@ CMakeFiles/process_manager.dir/src/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
  /usr/include/c++/13/bits/fstream.tcc \
- //home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/../include/process_manager.h
+ /home/agustin/Documents/importante/PPS/challengeLC/process_manager/src/../include/process_manager.h

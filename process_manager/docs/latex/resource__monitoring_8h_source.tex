@@ -3,59 +3,62 @@
 \mbox{\hyperlink{resource__monitoring_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ }
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ RESOURCE\_MONITORING\_H}}
-\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ RESOURCE\_MONITORING\_H}}
-\DoxyCodeLine{00013\ }
-\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{data__monitoring_8h}{data\_monitoring.h}}"{}}}
-\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{logger_8h}{logger.h}}"{}}}
-\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{thread__pool_8h}{thread\_pool.h}}"{}}}
-\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <atomic>}}
-\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <iostream>}}
-\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <memory>}}
-\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <mutex>}}
-\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <thread>}}
-\DoxyCodeLine{00022\ }
-\DoxyCodeLine{00032\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classResourceMonitoring}{ResourceMonitoring}}\ \{}
-\DoxyCodeLine{00033\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00040\ \ \ \mbox{\hyperlink{classResourceMonitoring_a7de795501f310e0460a10047a24e554f}{ResourceMonitoring}}();}
-\DoxyCodeLine{00041\ }
-\DoxyCodeLine{00048\ \ \ \mbox{\hyperlink{classResourceMonitoring_afd2feaa4fdd86cac1a0f197b7a0f92ca}{\string~ResourceMonitoring}}();}
-\DoxyCodeLine{00049\ }
-\DoxyCodeLine{00056\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classResourceMonitoring_a87477a8d0270b97da731d41d7862c2ee}{startMonitoring}}();}
-\DoxyCodeLine{00057\ }
-\DoxyCodeLine{00064\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classResourceMonitoring_aaafc3fb0291f1843bcb79dea679a72de}{stopMonitoring}}();}
-\DoxyCodeLine{00065\ }
-\DoxyCodeLine{00066\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00073\ \ \ \textcolor{keywordtype}{void}\ monitorCPU();}
-\DoxyCodeLine{00074\ }
-\DoxyCodeLine{00081\ \ \ \textcolor{keywordtype}{void}\ monitorMemory();}
-\DoxyCodeLine{00082\ }
-\DoxyCodeLine{00089\ \ \ \textcolor{keywordtype}{void}\ waitForStopInput();}
-\DoxyCodeLine{00090\ }
-\DoxyCodeLine{00097\ \ \ \textcolor{keywordtype}{void}\ waitForThreads();}
-\DoxyCodeLine{00098\ }
-\DoxyCodeLine{00105\ \ \ \textcolor{keywordtype}{void}\ monitorCPUAndMemory();}
-\DoxyCodeLine{00106\ }
-\DoxyCodeLine{00107\ \ \ \textcolor{comment}{//\ Thread\ pool\ for\ executing\ parallel\ tasks}}
-\DoxyCodeLine{00108\ \ \ \mbox{\hyperlink{classThreadPool}{ThreadPool}}\ pool\_;}
-\DoxyCodeLine{00109\ }
-\DoxyCodeLine{00110\ \ \ \textcolor{comment}{//\ Logger\ to\ log\ monitoring\ actions\ and\ warnings}}
-\DoxyCodeLine{00111\ \ \ \mbox{\hyperlink{classLogger}{Logger}}\ logger\_;}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ RESOURCE\_MONITORING\_H}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ RESOURCE\_MONITORING\_H}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{data__monitoring_8h}{data\_monitoring.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{logger_8h}{logger.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{thread__pool_8h}{thread\_pool.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <atomic>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classResourceMonitoring}{ResourceMonitoring}}\ \{}
+\DoxyCodeLine{00034\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00041\ \ \ \mbox{\hyperlink{classResourceMonitoring_a7de795501f310e0460a10047a24e554f}{ResourceMonitoring}}();}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00049\ \ \ \mbox{\hyperlink{classResourceMonitoring_afd2feaa4fdd86cac1a0f197b7a0f92ca}{\string~ResourceMonitoring}}();}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00057\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classResourceMonitoring_a87477a8d0270b97da731d41d7862c2ee}{startMonitoring}}();}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00065\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classResourceMonitoring_aaafc3fb0291f1843bcb79dea679a72de}{stopMonitoring}}();}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00075\ \ \ \mbox{\hyperlink{classDataMonitoring}{DataMonitoring}}\ \&\mbox{\hyperlink{classResourceMonitoring_a8fbefd1f3a478cc01d675eb2f26b0d52}{getDataMonitor}}()\ \{\ \textcolor{keywordflow}{return}\ dataMonitor;\ \}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00085\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classResourceMonitoring_a8f8602d56bf48d5af97a64d337a1976d}{getMonitoringBool}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ monitoring\_;\ \}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00094\ \ \ \textcolor{keywordtype}{void}\ monitorCPU();}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00102\ \ \ \textcolor{keywordtype}{void}\ monitorMemory();}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00111\ \ \ \textcolor{keywordtype}{void}\ waitForStopInput();}
 \DoxyCodeLine{00112\ }
-\DoxyCodeLine{00113\ \ \ \textcolor{comment}{//\ Atomic\ flag\ to\ indicate\ whether\ monitoring\ is\ active}}
-\DoxyCodeLine{00114\ \ \ std::atomic<bool>\ monitoring\_;}
-\DoxyCodeLine{00115\ }
-\DoxyCodeLine{00116\ \ \ \textcolor{comment}{//\ Mutex\ to\ protect\ access\ to\ the\ monitoring\ state}}
-\DoxyCodeLine{00117\ \ \ std::mutex\ monitoringMutex\_;}
-\DoxyCodeLine{00118\ }
-\DoxyCodeLine{00119\ \ \ \textcolor{comment}{//\ Condition\ variable\ to\ wait\ for\ the\ stop\ signal}}
-\DoxyCodeLine{00120\ \ \ std::condition\_variable\ stopCondition\_;}
+\DoxyCodeLine{00120\ \ \ \textcolor{keywordtype}{void}\ waitForThreads();}
 \DoxyCodeLine{00121\ }
-\DoxyCodeLine{00122\ \ \ \textcolor{comment}{//\ Data\ monitoring\ object\ for\ collecting\ resource\ usage\ data}}
-\DoxyCodeLine{00123\ \ \ \mbox{\hyperlink{classDataMonitoring}{DataMonitoring}}\ dataMonitor;}
-\DoxyCodeLine{00124\ \};}
-\DoxyCodeLine{00125\ }
-\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ RESOURCE\_MONITORING\_H}}
-\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00130\ \ \ \textcolor{keywordtype}{void}\ monitorCPUAndMemory();}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \textcolor{comment}{//\ Thread\ pool\ for\ executing\ parallel\ tasks}}
+\DoxyCodeLine{00133\ \ \ \mbox{\hyperlink{classThreadPool}{ThreadPool}}\ pool\_;}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \textcolor{comment}{//\ Logger\ to\ log\ monitoring\ actions\ and\ warnings}}
+\DoxyCodeLine{00136\ \ \ \mbox{\hyperlink{classLogger}{Logger}}\ logger\_;}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \textcolor{comment}{//\ Atomic\ flag\ to\ indicate\ whether\ monitoring\ is\ active}}
+\DoxyCodeLine{00139\ \ \ std::atomic<bool>\ monitoring\_;}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ \textcolor{comment}{//\ Mutex\ to\ protect\ access\ to\ the\ monitoring\ state}}
+\DoxyCodeLine{00142\ \ \ std::mutex\ monitoringMutex\_;}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \textcolor{comment}{//\ Condition\ variable\ to\ wait\ for\ the\ stop\ signal}}
+\DoxyCodeLine{00145\ \ \ std::condition\_variable\ stopCondition\_;}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \textcolor{comment}{//\ Data\ monitoring\ object\ for\ collecting\ resource\ usage\ data}}
+\DoxyCodeLine{00148\ \ \ \mbox{\hyperlink{classDataMonitoring}{DataMonitoring}}\ dataMonitor;}
+\DoxyCodeLine{00149\ \};}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ RESOURCE\_MONITORING\_H}}
 
 \end{DoxyCode}

@@ -48,7 +48,15 @@
 \DoxyCodeLine{00101\ \ \ std::atomic<int>\ activeTasks\_;}
 \DoxyCodeLine{00102\ \};}
 \DoxyCodeLine{00103\ }
-\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ THREAD\_POOL\_H}}
-\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00104\ \textcolor{comment}{//\ Template\ function\ definition\ inside\ the\ header}}
+\DoxyCodeLine{00105\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ F>\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classThreadPool_a3aff84dd9e4f10279d55b7a7bc7009cb}{ThreadPool::enqueue}}(F\ \&\&f)\ \{}
+\DoxyCodeLine{00106\ \ \ \{}
+\DoxyCodeLine{00107\ \ \ \ \ std::lock\_guard<std::mutex>\ lock(tasksMutex\_);}
+\DoxyCodeLine{00108\ \ \ \ \ tasks\_.emplace(std::forward<F>(f));\ \textcolor{comment}{//\ Add\ the\ task\ to\ the\ queue}}
+\DoxyCodeLine{00109\ \ \ \}}
+\DoxyCodeLine{00110\ \ \ cv\_.notify\_one();\ \textcolor{comment}{//\ Notify\ one\ thread\ that\ a\ new\ task\ is\ available}}
+\DoxyCodeLine{00111\ \}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ THREAD\_POOL\_H}}
 
 \end{DoxyCode}
