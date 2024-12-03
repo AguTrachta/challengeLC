@@ -89,4 +89,3 @@ private:
 };
 
 #endif // LOGGER_H
-

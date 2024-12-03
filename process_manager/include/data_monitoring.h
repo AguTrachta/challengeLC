@@ -102,4 +102,3 @@ private:
 };
 
 #endif // DATA_MONITORING_H
-

@@ -38,4 +38,3 @@ public:
 };
 
 #endif // PROCESS_CONTROL_H
-
