@@ -1,56 +1,37 @@
 
-name: Style Check
-description: Style check using clang-format
+name: "Style check"
+description: "Style check using clang-format"
 
-on:
-  pull_request:
-    branches:
-      - main
-      - develop
-  push:
-    branches:
-      - main
-      - develop
+runs:
+  using: "composite"
+  steps:
+    - name: "Run clang-format"
+      shell: bash
+      run: |
+        # We only make check, not changes
+        # Use the find command with the correct paths
+        PROJECT_PATH=$(pwd)
 
-jobs:
-  style_check:
-    runs-on: ubuntu-latest
+        # Specify the correct paths for src and include
+        SOURCE_FILES=$(find $PROJECT_PATH/process_manager/src -type f \( -name "*.cpp" -or -name "*.hpp" -or -name "*.h" -or -name "*.c" \) | tr "\n" " ")
+        SOURCE_FILES+=$(find $PROJECT_PATH/process_manager/include -type f \( -name "*.cpp" -or -name "*.hpp" -or -name "*.h" -or -name "*.c" \) | tr "\n" " ")
+        
+        # If you have a lib, uncomment the following line
+        # SOURCE_FILES+=$(find $PROJECT_PATH/lib -type f \( -name "*.cpp" -or -name "*.hpp" -or -name "*.h" -or -name "*.c" \) | tr "\n" " ")
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+        ERROR_FILE_FLAG=$PROJECT_PATH/clang-format_errors.txt
 
-      - name: Set up environment
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y clang-format
+        echo "Running: clang-format -n $SOURCE_FILES"
 
-      - name: Run clang-format style check
-        shell: bash
-        run: |
-          # We only make check, not changes
-          # Use the find command with the variable
-          PROJECT_PATH=$(pwd)
-
-          # Find source files
-          SOURCE_FILES=$(find $PROJECT_PATH/src -type f \( -name "*.cpp" -or -name "*.hpp" -or -name "*.h" -or -name "*.c" \) | tr "\n" " ")
-          SOURCE_FILES+=$(find $PROJECT_PATH/include -type f \( -name "*.cpp" -or -name "*.hpp" -or -name "*.h" -or -name "*.c" \) | tr "\n" " ")
-          # If you have a lib, uncomment the following line
-          # SOURCE_FILES+=$(find $PROJECT_PATH/lib -type f \( -name "*.cpp" -or -name "*.hpp" -or -name "*.h" -or -name "*.c" \) | tr "\n" " ")
-
-          # Set error file flag
-          ERROR_FILE_FLAG=$PROJECT_PATH/clang-format_errors.txt
-
-          # Run clang-format with -n to only check, not modify
-          echo "Running: clang-format -n $SOURCE_FILES"
-          clang-format -n $SOURCE_FILES 2> ${ERROR_FILE_FLAG}
-
-          # Check if there are any errors
-          if [ -s $ERROR_FILE_FLAG ]; then
-              echo "Error: Some files are not formatted correctly"
-              cat $ERROR_FILE_FLAG
-              exit 1
-          else
-              echo "All files are formatted correctly. Niiiceee"
-              exit 0
-          fi
+        # Run clang-format check
+        clang-format -n $SOURCE_FILES 2> ${ERROR_FILE_FLAG}
+        
+        # Check for errors
+        if [ -s $ERROR_FILE_FLAG ]; then
+            echo "Error: Some files are not formatted correctly"
+            cat $ERROR_FILE_FLAG
+            exit 1
+        else
+            echo "All files are formatted correctly. Niiiceee"
+            exit 0
+        fi
